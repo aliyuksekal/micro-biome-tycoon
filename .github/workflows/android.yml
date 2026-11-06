@@ -129,13 +129,19 @@ jobs:
           KS="$RUNNER_TEMP/upload.jks"
           # telefondan yapıştırırken eklenen boşluk / satır sonlarını temizle
           B64=$(printf '%s' "$KS_B64" | tr -d ' \r\n\t')
-          PASS=$(printf '%s' "$KS_PASS" | tr -d '\r\n')
+          PASS=$(printf '%s' "$KS_PASS" | tr -d '\r')
+          # ANAHTAR_BILGISI.txt metninin tamamı yapıştırıldıysa şifreyi içinden ayıkla
+          if printf '%s' "$PASS" | grep -q "ANDROID_KEYSTORE_PASSWORD"; then
+            PASS=$(printf '%s\n' "$PASS" | sed -n 's/.*ANDROID_KEYSTORE_PASSWORD *= *\([^ ]*\).*/\1/p' | head -1)
+          fi
+          PASS=$(printf '%s' "$PASS" | tr -d '\n')
           ALIAS=$(printf '%s' "$KS_ALIAS" | tr -d ' \r\n\t')
-          [ -n "$ALIAS" ] || ALIAS=upload
+          # alias geçerli bir ad değilse (boş, dosya içeriği vb.) varsayılan "upload"
+          if ! printf '%s' "$ALIAS" | grep -Eq '^[A-Za-z0-9_.-]{1,64}$'; then ALIAS=upload; fi
           if [ -n "$B64" ] && [ -n "$PASS" ]; then
             echo "::add-mask::$PASS"
             printf '%s' "$B64" | base64 -d > "$KS" || { echo "::error::ANDROID_KEYSTORE_BASE64 çözülemedi (eksik/yanlış kopyalanmış olabilir)"; exit 1; }
-            echo "Teşhis: base64 uzunluğu=${#B64}, şifre uzunluğu=${#PASS}, alias uzunluğu=${#ALIAS}, alias='${ALIAS}', jks sha256=$(sha256sum "$KS" | cut -c1-16)"
+            echo "Teşhis: base64 uzunluğu=${#B64}, şifre uzunluğu=${#PASS}, jks sha256=$(sha256sum "$KS" | cut -c1-16)"
             if ! keytool -list -keystore "$KS" -storepass "$PASS" > /dev/null 2>&1; then echo "::error::Şifre dosyayı açmıyor (ANDROID_KEYSTORE_PASSWORD)"; fi
             if ! keytool -list -keystore "$KS" -storepass "$PASS" -alias "$ALIAS" > /dev/null 2>&1; then
               echo "::error::Anahtar açılamadı: ANDROID_KEYSTORE_PASSWORD veya ANDROID_KEY_ALIAS hatalı"; exit 1
