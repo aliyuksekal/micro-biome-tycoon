@@ -13,12 +13,13 @@ var board_mat: ShaderMaterial
 var _excite: float = 0.0
 var _excite_target: float = 0.15
 var _net_t: float = 10.0
+var _inner_nets: Array[Node3D] = []
 
 
 const GRASS_SHADER := """
 shader_type spatial;
-uniform vec3 g1 : source_color = vec3(0.16, 0.50, 0.17);
-uniform vec3 g2 : source_color = vec3(0.12, 0.42, 0.14);
+uniform vec3 g1 : source_color = vec3(0.12, 0.40, 0.14);
+uniform vec3 g2 : source_color = vec3(0.09, 0.33, 0.11);
 varying vec3 wp;
 void vertex() { wp = (MODEL_MATRIX * vec4(VERTEX, 1.0)).xyz; }
 float hash(vec2 p) { return fract(sin(dot(p, vec2(127.1, 311.7))) * 43758.5453); }
@@ -169,6 +170,11 @@ func excite(level: float, seconds: float = 3.0) -> void:
 	get_tree().create_timer(seconds, true, false, true).timeout.connect(func() -> void: _excite_target = 0.15)
 
 
+func set_back_net_visible(v: bool) -> void:
+	for n in _inner_nets:
+		n.visible = v
+
+
 func net_hit(p: Vector3) -> void:
 	_net_t = 0.0
 	if net_mat:
@@ -283,6 +289,7 @@ func _build_goal() -> void:
 	back_net.material_override = m_back
 	_set_net_scale(m_back, bp.size)
 	add_child(back_net)
+	_inner_nets.append(back_net)
 	for sx in [-1.0, 1.0]:
 		var side := MeshInstance3D.new()
 		var sp := PlaneMesh.new()
@@ -300,6 +307,7 @@ func _build_goal() -> void:
 	top.position = Vector3(0, GOAL_H, -NET_DEPTH * 0.35)
 	top.material_override = _shader_mat(NET_SHADER % ("%f, %f" % [GOAL_HALF * 2, NET_DEPTH * 0.7]))
 	add_child(top)
+	_inner_nets.append(top)
 
 
 func _set_net_scale(m: ShaderMaterial, size: Vector2) -> void:

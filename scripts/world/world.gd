@@ -116,6 +116,7 @@ func _reset_ball() -> void:
 
 func place_menu() -> void:
 	cam_mode = "menu"
+	stadium.set_back_net_visible(true)
 	_fit_camera()
 	shooter.apply_kit(Kits.get_kit(my_kit))
 	keeper.apply_kit({}, Kits.KEEPER[rival_kit])
@@ -130,6 +131,7 @@ func place_menu() -> void:
 
 func place_kits() -> void:
 	cam_mode = "kits"
+	stadium.set_back_net_visible(true)
 	_fit_camera()
 	shooter.apply_kit(Kits.get_kit(my_kit))
 	keeper.apply_kit({}, Kits.KEEPER[rival_kit])
@@ -149,9 +151,11 @@ func place_for_shoot(instant: bool = false) -> void:
 	_fit_camera()
 	shooter.apply_kit(Kits.get_kit(my_kit))
 	keeper.apply_kit({}, Kits.KEEPER[rival_kit])
+	stadium.set_back_net_visible(true)
 	_reset_players()
 	_reset_ball()
-	_set_cam(Vector3(0, 1.55, 16.2), Vector3(0, 1.0, 2.0), instant, 0.9)
+	shooter.position = Vector3(-1.5, 0, 12.9)
+	_set_cam(Vector3(0.35, 1.75, 15.6), Vector3(0, 1.05, 1.0), instant, 0.9)
 
 
 ## Yapay zekâ şut atar: şutçu = rakip forma, kaleci = senin kaleci forman
@@ -160,9 +164,10 @@ func place_for_keep(instant: bool = false) -> void:
 	_fit_camera()
 	shooter.apply_kit(Kits.get_kit(rival_kit))
 	keeper.apply_kit({}, Kits.KEEPER[my_kit])
+	stadium.set_back_net_visible(false)
 	_reset_players()
 	_reset_ball()
-	_set_cam(Vector3(0, 1.45, -2.2), Vector3(0, 0.9, 11.0), instant, 0.9)
+	_set_cam(Vector3(0, 1.85, -3.6), Vector3(0, 0.75, 11.0), instant, 0.9)
 
 
 func _reset_players() -> void:
@@ -179,7 +184,7 @@ func _reset_players() -> void:
 func run_up(duration: float = 0.6) -> void:
 	shooter.set_state("run")
 	var tw := create_tween()
-	tw.tween_property(shooter, "position", Vector3(-0.32, 0, 11.45), duration)
+	tw.tween_property(shooter, "position", Vector3(-0.3, 0, 11.4), duration)
 	await tw.finished
 	shooter.set_state("kick")
 	await get_tree().create_timer(0.2, false).timeout

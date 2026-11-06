@@ -116,9 +116,8 @@ func reading_percent() -> int:
 	## Yapay zekânın şut yönünü (sol/orta/sağ) doğru tahmin etme oranı
 	var a: Dictionary = Save.ai
 	var t: int = int(a["pred_total"])
-	if t == 0:
-		return 33
-	return int(round(100.0 * float(a["pred_side_hits"]) / float(t)))
+	# az veride abartmamak için önsel (1 isabet / 3 deneme ≈ %33 şans düzeyi)
+	return int(round(100.0 * (float(a["pred_side_hits"]) + 1.0) / (float(t) + 3.0)))
 
 
 static func argmax(v: Array[float]) -> int:
