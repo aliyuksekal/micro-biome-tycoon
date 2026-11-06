@@ -154,8 +154,12 @@ func place_for_shoot(instant: bool = false) -> void:
 	stadium.set_back_net_visible(true)
 	_reset_players()
 	_reset_ball()
-	shooter.position = Vector3(-1.5, 0, 12.9)
-	_set_cam(Vector3(0.35, 1.75, 15.6), Vector3(0, 1.05, 1.0), instant, 0.9)
+	shooter.position = Vector3(-1.05, 0, 13.0)
+	var portrait: bool = get_viewport().get_visible_rect().size.x < get_viewport().get_visible_rect().size.y
+	if portrait:
+		_set_cam(Vector3(0.3, 1.9, 15.0), Vector3(0, 1.0, 1.0), instant, 0.9)
+	else:
+		_set_cam(Vector3(0.35, 1.75, 15.6), Vector3(0, 1.05, 1.0), instant, 0.9)
 
 
 ## Yapay zekâ şut atar: şutçu = rakip forma, kaleci = senin kaleci forman
@@ -167,7 +171,7 @@ func place_for_keep(instant: bool = false) -> void:
 	stadium.set_back_net_visible(false)
 	_reset_players()
 	_reset_ball()
-	_set_cam(Vector3(0, 1.85, -3.6), Vector3(0, 0.75, 11.0), instant, 0.9)
+	_set_cam(Vector3(0, 1.7, -2.9), Vector3(0, 0.85, 11.0), instant, 0.9)
 
 
 func _reset_players() -> void:
