@@ -2,7 +2,7 @@ extends "res://scripts/screens/common.gd"
 ## Maç ekranı: skor tabelası, "seni okuyor" göstergesi, kaydırma girişi, ipucu,
 ## GOOOL efekti (yavaş çekim, flaş, dev yazı), maç sonu analizi.
 
-const Match = preload("res://scripts/game/game.gd")
+const Match = preload("res://scripts/game/match.gd")
 const Brain = preload("res://scripts/game/brain.gd")
 const HINT_COST := 25
 
