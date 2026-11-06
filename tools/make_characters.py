@@ -347,7 +347,7 @@ def build(keeper, voxel=0.0085):
     vol = vol.reshape(shape)
     verts, faces, _, _ = measure.marching_cubes(vol, 0.0, spacing=(voxel,) * 3)
     verts = verts.astype(np.float32) + lo
-    faces = faces[:, ::-1].copy()  # glTF: saat yönünün tersi ön yüz
+    faces = faces.copy()  # skimage (descent) yüzleri zaten dışa dönük üretir
     # normaller: SDF gradyanı
     e = 0.002
     n = np.stack([
