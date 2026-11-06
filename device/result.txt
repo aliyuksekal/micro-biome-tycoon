@@ -1,0 +1,7 @@
+ABI listesi: x86_64,arm64-v8a
+Android: 15 (SDK 35)
+AAB doğrulama: OK
+AAB evrensel APK kurulumu: Success
+Release APK kurulumu: Success
+Uygulama çalışıyor (pid 3491)
+SONUÇ: BAŞARILI

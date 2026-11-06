@@ -1,0 +1,11 @@
+total 791100
+drwxr-xr-x  4 runner runner      4096 Nov  6 22:03 .
+drwxr-xr-x 14 runner runner      4096 Nov  6 22:01 ..
+-rw-r--r--  1 runner runner         0 Nov  6 21:52 .gdignore
+-rw-r--r--  1 runner runner      1358 Nov  6 22:03 RELEASE_NOTES.md
+drwxr-xr-x  2 runner runner      4096 Nov  6 22:03 device
+-rw-r--r--  1 runner runner   2510388 Nov  6 21:57 mapping.txt
+-rw-r--r--  1 runner runner 572827534 Nov  6 22:01 native-debug-symbols.zip
+-rw-r--r--  1 runner runner  81407833 Nov  6 21:57 penalti-ustasi.aab
+-rw-r--r--  1 runner runner 153312433 Nov  6 21:58 penalti-ustasi.apk
+drwxr-xr-x  2 runner runner      4096 Nov  6 21:56 screenshots

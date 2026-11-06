@@ -1,0 +1,117 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+=== SELFTEST ===
+  ok  çeviriler tam: []
+  ok  ikonlar tam: []
+  ok  30 kez sağ alta vurunca yapay zekâ sağ altı bekliyor
+  ok  okuma yüzdesi yükseldi: 91
+  ok  dalış alışkanlığı öğrenildi
+  ok  bölge hesabı
+  ok  yukarı-sağ hızlı kaydırma: sağa güçlü şut
+  ok  aşağı kaydırma şut değil
+  ok  sola-yukarı kaydırma: sola dalış
+  ok  3-0, 3'er atış sonrası kazanıldı
+  ok  2-2, 4'er atış: devam
+  ok  5'er atış eşit: seri penaltı
+  ok  seri penaltıda öne geçen kazanır
+  ok  kayıt yüklendi
+ERROR: Parse JSON failed. Error at line 0: Expected key
+   at: parse_string (core/io/json.cpp:629)
+   GDScript backtrace (most recent call first):
+       [0] load_data (res://scripts/autoload/save.gd:164)
+       [1] _run (res://scripts/dev/selftest.gd:71)
+  ok  bozuk kayıtta yedek kullanıldı
+  ok  maç sonuna kadar oynandı
+  ok  maç bir kazananla bitti: 6-5
+  ok  istatistik kaydedildi
+  ok  sonuç penceresi açıldı
+  ok  ekran menu (tr/light)
+  ok  ekran kits (tr/light)
+  ok  ekran levels (tr/light)
+  ok  ekran shop (tr/light)
+  ok  ekran settings (tr/light)
+  ok  ekran about (tr/light)
+  ok  ekran howto (tr/light)
+  ok  ekran menu (en/light)
+  ok  ekran kits (en/light)
+  ok  ekran levels (en/light)
+  ok  ekran shop (en/light)
+  ok  ekran settings (en/light)
+  ok  ekran about (en/light)
+  ok  ekran howto (en/light)
+  ok  ekran menu (ru/light)
+  ok  ekran kits (ru/light)
+  ok  ekran levels (ru/light)
+  ok  ekran shop (ru/light)
+  ok  ekran settings (ru/light)
+  ok  ekran about (ru/light)
+  ok  ekran howto (ru/light)
+  ok  ekran menu (uz/light)
+  ok  ekran kits (uz/light)
+  ok  ekran levels (uz/light)
+  ok  ekran shop (uz/light)
+  ok  ekran settings (uz/light)
+  ok  ekran about (uz/light)
+  ok  ekran howto (uz/light)
+  ok  ekran menu (zh/light)
+  ok  ekran kits (zh/light)
+  ok  ekran levels (zh/light)
+  ok  ekran shop (zh/light)
+  ok  ekran settings (zh/light)
+  ok  ekran about (zh/light)
+  ok  ekran howto (zh/light)
+  ok  ekran menu (ko/light)
+  ok  ekran kits (ko/light)
+  ok  ekran levels (ko/light)
+  ok  ekran shop (ko/light)
+  ok  ekran settings (ko/light)
+  ok  ekran about (ko/light)
+  ok  ekran howto (ko/light)
+  ok  ekran menu (tr/dark)
+  ok  ekran kits (tr/dark)
+  ok  ekran levels (tr/dark)
+  ok  ekran shop (tr/dark)
+  ok  ekran settings (tr/dark)
+  ok  ekran about (tr/dark)
+  ok  ekran howto (tr/dark)
+  ok  ekran menu (en/dark)
+  ok  ekran kits (en/dark)
+  ok  ekran levels (en/dark)
+  ok  ekran shop (en/dark)
+  ok  ekran settings (en/dark)
+  ok  ekran about (en/dark)
+  ok  ekran howto (en/dark)
+  ok  ekran menu (ru/dark)
+  ok  ekran kits (ru/dark)
+  ok  ekran levels (ru/dark)
+  ok  ekran shop (ru/dark)
+  ok  ekran settings (ru/dark)
+  ok  ekran about (ru/dark)
+  ok  ekran howto (ru/dark)
+  ok  ekran menu (uz/dark)
+  ok  ekran kits (uz/dark)
+  ok  ekran levels (uz/dark)
+  ok  ekran shop (uz/dark)
+  ok  ekran settings (uz/dark)
+  ok  ekran about (uz/dark)
+  ok  ekran howto (uz/dark)
+  ok  ekran menu (zh/dark)
+  ok  ekran kits (zh/dark)
+  ok  ekran levels (zh/dark)
+  ok  ekran shop (zh/dark)
+  ok  ekran settings (zh/dark)
+  ok  ekran about (zh/dark)
+  ok  ekran howto (zh/dark)
+  ok  ekran menu (ko/dark)
+  ok  ekran kits (ko/dark)
+  ok  ekran levels (ko/dark)
+  ok  ekran shop (ko/dark)
+  ok  ekran settings (ko/dark)
+  ok  ekran about (ko/dark)
+  ok  ekran howto (ko/dark)
+=== SELFTEST 103 kontrol, 0 hata ===
+SELFTEST PASS
+WARNING: 32 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 2 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)
