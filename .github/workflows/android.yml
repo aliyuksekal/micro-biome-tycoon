@@ -190,6 +190,25 @@ jobs:
           jarsigner -verify build/micro-biome-tycoon.aab | tail -1 | tee -a verify.txt
           ls -la build
 
+      - name: bundletool
+        run: curl -fsSL --retry 3 -o /tmp/bundletool.jar https://github.com/google/bundletool/releases/download/1.17.2/bundletool-all-1.17.2.jar
+
+      - name: KVM
+        run: |
+          echo 'KERNEL=="kvm", GROUP="kvm", MODE="0666", OPTIONS+="static_node=kvm"' | sudo tee /etc/udev/rules.d/99-kvm4all.rules
+          sudo udevadm control --reload-rules
+          sudo udevadm trigger --name-match=kvm
+
+      - name: Emülatörde kurulum ve açılış testi (Android 15)
+        uses: reactivecircus/android-emulator-runner@v2
+        with:
+          api-level: 35
+          arch: x86_64
+          target: google_apis
+          disable-animations: true
+          emulator-options: -no-window -gpu swiftshader_indirect -noaudio -no-boot-anim -camera-back none
+          script: bash tools/device_test.sh
+
       - name: Sürüm notu
         run: |
           {
@@ -208,6 +227,8 @@ jobs:
             echo
             echo '```'
             cat verify.txt
+            echo
+            cat build/device/result.txt 2>/dev/null
             echo '```'
           } > build/RELEASE_NOTES.md
 
@@ -217,6 +238,7 @@ jobs:
           rm -rf /tmp/out && mkdir -p /tmp/out
           cp -r build/screenshots /tmp/out/ 2>/dev/null || true
           cp selftest.log shots.log verify.txt export_aab.log export_apk.log /tmp/out/ 2>/dev/null || true
+          cp -r build/device /tmp/out/ 2>/dev/null || true
           ls -la build > /tmp/out/build_listing.txt 2>/dev/null || true
           cd /tmp/out && git init -q && git checkout -q -b ci-artifacts && git add -A
           git -c user.name="ci" -c user.email="ci@users.noreply.github.com" commit -q -m "CI ${VERSION_NAME}"
