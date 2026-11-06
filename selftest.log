@@ -1,0 +1,163 @@
+Godot Engine v4.7.2.stable.official.ed1daf0bf - https://godotengine.org
+
+=== SELFTEST başladı ===
+  ok  tüm çeviriler 6 dilde mevcut: []
+  ok  tüm dokular yüklendi: []
+  ok  sprite lactobacillus/idle_0 256px
+  ok  sprite lactobacillus/idle_1 256px
+  ok  sprite lactobacillus/idle_2 256px
+  ok  sprite lactobacillus/idle_3 256px
+  ok  sprite lactobacillus/happy 256px
+  ok  sprite lactobacillus/eating 256px
+  ok  sprite lactobacillus/damaged 256px
+  ok  sprite bifidobacterium/idle_0 256px
+  ok  sprite bifidobacterium/idle_1 256px
+  ok  sprite bifidobacterium/idle_2 256px
+  ok  sprite bifidobacterium/idle_3 256px
+  ok  sprite bifidobacterium/happy 256px
+  ok  sprite bifidobacterium/eating 256px
+  ok  sprite bifidobacterium/damaged 256px
+  ok  sprite streptococcus/idle_0 256px
+  ok  sprite streptococcus/idle_1 256px
+  ok  sprite streptococcus/idle_2 256px
+  ok  sprite streptococcus/idle_3 256px
+  ok  sprite streptococcus/happy 256px
+  ok  sprite streptococcus/eating 256px
+  ok  sprite streptococcus/damaged 256px
+  ok  sprite e_faecalis/idle_0 256px
+  ok  sprite e_faecalis/idle_1 256px
+  ok  sprite e_faecalis/idle_2 256px
+  ok  sprite e_faecalis/idle_3 256px
+  ok  sprite e_faecalis/happy 256px
+  ok  sprite e_faecalis/eating 256px
+  ok  sprite e_faecalis/damaged 256px
+  ok  sprite pathogen/idle_0 256px
+  ok  sprite pathogen/idle_1 256px
+  ok  sprite pathogen/idle_2 256px
+  ok  sprite pathogen/idle_3 256px
+  ok  sprite pathogen/happy 256px
+  ok  sprite pathogen/eating 256px
+  ok  sprite pathogen/damaged 256px
+  ok  sprite inflammatory/idle_0 256px
+  ok  sprite inflammatory/idle_1 256px
+  ok  sprite inflammatory/idle_2 256px
+  ok  sprite inflammatory/idle_3 256px
+  ok  sprite inflammatory/happy 256px
+  ok  sprite inflammatory/eating 256px
+  ok  sprite inflammatory/damaged 256px
+  ok  sprite c_difficile/idle_0 256px
+  ok  sprite c_difficile/idle_1 256px
+  ok  sprite c_difficile/idle_2 256px
+  ok  sprite c_difficile/idle_3 256px
+  ok  sprite c_difficile/happy 256px
+  ok  sprite c_difficile/eating 256px
+  ok  sprite c_difficile/damaged 256px
+  ok  yeni oyunda 20 besin
+  ok  orta karo normal
+  ok  lactobacillus yerleştirildi
+  ok  dolu karoya yerleştirilemez
+  ok  üretim besin kazandırıyor
+  ok  üretim > 0
+  ok  kilitli tür yerleştirilemez
+  ok  patojen dokunarak yenildi
+  ok  patojen yenince lif kazanıldı
+  ok  koloni beslendi
+  ok  seviye 2 oldu
+  ok  geliştirme alındı: tap
+  ok  geliştirme alındı: prod
+  ok  geliştirme alındı: immune
+  ok  geliştirme alındı: barrier
+  ok  geliştirme alındı: offline
+  ok  çevrimdışı sınır 3 saat
+  ok  hediye alındı
+  ok  x2 aktif
+  ok  hediye bekleme süresinde tekrar alınamaz
+  ok  saat geri alınınca bekleme makul kalır
+  ok  çevrimdışı ödül hesaplandı
+  ok  çevrimdışı süre sınırlandı
+  ok  negatif süre (saat geri) ödül vermez
+  ok  kayıt yüklendi
+  ok  besin kayıttan geri geldi
+ERROR: Parse JSON failed. Error at line 0: Expected key
+   at: parse_string (core/io/json.cpp:629)
+   GDScript backtrace (most recent call first):
+       [0] _read_json (res://scripts/autoload/game.gd:732)
+       [1] load_game (res://scripts/autoload/game.gd:740)
+       [2] _run (res://scripts/dev/selftest.gd:96)
+WARNING: Bozuk kayıt atlandı: user://save.json
+     at: push_warning (core/variant/variant_utility.cpp:1033)
+     GDScript backtrace (most recent call first):
+         [0] load_game (res://scripts/autoload/game.gd:745)
+         [1] _run (res://scripts/dev/selftest.gd:96)
+  ok  bozuk kayıtta yedekten yüklendi
+  ok  1500 adım sonra besin geçerli
+  ok  bariyer 0-100 aralığında
+  ok  bariyer bitince oyun biter
+  ok  kurtarma çalışır
+  ok  ekran intro (tr/light)
+  ok  ekran menu (tr/light)
+  ok  ekran game (tr/light)
+  ok  ekran settings (tr/light)
+  ok  ekran about (tr/light)
+  ok  ekran intro (en/light)
+  ok  ekran menu (en/light)
+  ok  ekran game (en/light)
+  ok  ekran settings (en/light)
+  ok  ekran about (en/light)
+  ok  ekran intro (ru/light)
+  ok  ekran menu (ru/light)
+  ok  ekran game (ru/light)
+  ok  ekran settings (ru/light)
+  ok  ekran about (ru/light)
+  ok  ekran intro (uz/light)
+  ok  ekran menu (uz/light)
+  ok  ekran game (uz/light)
+  ok  ekran settings (uz/light)
+  ok  ekran about (uz/light)
+  ok  ekran intro (zh/light)
+  ok  ekran menu (zh/light)
+  ok  ekran game (zh/light)
+  ok  ekran settings (zh/light)
+  ok  ekran about (zh/light)
+  ok  ekran intro (ko/light)
+  ok  ekran menu (ko/light)
+  ok  ekran game (ko/light)
+  ok  ekran settings (ko/light)
+  ok  ekran about (ko/light)
+  ok  ekran intro (tr/dark)
+  ok  ekran menu (tr/dark)
+  ok  ekran game (tr/dark)
+  ok  ekran settings (tr/dark)
+  ok  ekran about (tr/dark)
+  ok  ekran intro (en/dark)
+  ok  ekran menu (en/dark)
+  ok  ekran game (en/dark)
+  ok  ekran settings (en/dark)
+  ok  ekran about (en/dark)
+  ok  ekran intro (ru/dark)
+  ok  ekran menu (ru/dark)
+  ok  ekran game (ru/dark)
+  ok  ekran settings (ru/dark)
+  ok  ekran about (ru/dark)
+  ok  ekran intro (uz/dark)
+  ok  ekran menu (uz/dark)
+  ok  ekran game (uz/dark)
+  ok  ekran settings (uz/dark)
+  ok  ekran about (uz/dark)
+  ok  ekran intro (zh/dark)
+  ok  ekran menu (zh/dark)
+  ok  ekran game (zh/dark)
+  ok  ekran settings (zh/dark)
+  ok  ekran about (zh/dark)
+  ok  ekran intro (ko/dark)
+  ok  ekran menu (ko/dark)
+  ok  ekran game (ko/dark)
+  ok  ekran settings (ko/dark)
+  ok  ekran about (ko/dark)
+  ok  yatay ekranda oyun ekranı çalışıyor
+=== SELFTEST 143 kontrol, 0 hata ===
+SELFTEST PASS
+WARNING: 4 ObjectDB instances were leaked at exit (run with `--verbose` for details).
+   at: cleanup (core/object/object.cpp:2536)
+ERROR: 2 resources still in use at exit (run with --verbose for details).
+   at: clear (core/io/resource.cpp:822)

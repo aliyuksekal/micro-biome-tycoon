@@ -1,0 +1,11 @@
+total 799872
+drwxr-xr-x  4 runner runner      4096 Nov  6 17:50 .
+drwxr-xr-x 15 runner runner      4096 Nov  6 17:47 ..
+-rw-r--r--  1 runner runner         0 Nov  6 17:40 .gdignore
+-rw-r--r--  1 runner runner      1371 Nov  6 17:50 RELEASE_NOTES.md
+drwxr-xr-x  2 runner runner      4096 Nov  6 17:49 device
+-rw-r--r--  1 runner runner   2510388 Nov  6 17:42 mapping.txt
+-rw-r--r--  1 runner runner  85905922 Nov  6 17:42 micro-biome-tycoon.aab
+-rw-r--r--  1 runner runner 157788171 Nov  6 17:42 micro-biome-tycoon.apk
+-rw-r--r--  1 runner runner 572827534 Nov  6 17:47 native-debug-symbols.zip
+drwxr-xr-x  2 runner runner      4096 Nov  6 17:40 screenshots
