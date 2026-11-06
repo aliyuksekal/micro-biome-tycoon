@@ -63,7 +63,8 @@ func _make_font() -> Font:
 		if f != null:
 			var v := FontVariation.new()
 			v.base_font = f
-			v.variation_opentype = {"wght": 800}
+			var ts: TextServer = TextServerManager.get_primary_interface()
+			v.variation_opentype = {ts.name_to_tag("wght"): 800}
 			var fb: Array[Font] = [sys]
 			f.fallbacks = fb
 			return v

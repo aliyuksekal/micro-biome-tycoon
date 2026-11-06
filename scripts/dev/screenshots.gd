@@ -54,6 +54,7 @@ func _demo_state() -> void:
 	Game.barrier = 82.0
 	Game.lifetime_earned = 25000.0
 	Game.best_score = 48200.0
+	Game.run_earned = 36500.0
 	Game.boost_until = Game.now_unix() + 95.0
 	Game.last_gift = Game.now_unix()
 	Game.selected = "bifidobacterium"

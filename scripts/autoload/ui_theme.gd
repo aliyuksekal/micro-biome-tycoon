@@ -129,8 +129,8 @@ func _style_button(t: Theme, type: String, base: Color, darker: Color) -> void:
 	for st in ["font_color", "font_hover_color", "font_pressed_color", "font_focus_color", "font_hover_pressed_color"]:
 		t.set_color(st, type, Color.WHITE)
 	t.set_color("font_disabled_color", type, Color(1, 1, 1, 0.75))
-	t.set_color("font_outline_color", type, darker.darkened(0.25))
-	t.set_constant("outline_size", type, 6)
+	t.set_color("font_outline_color", type, darker.darkened(0.35))
+	t.set_constant("outline_size", type, 4)
 
 
 func _btn_box(base: Color, darker: Color, pressed: bool = false) -> StyleBoxFlat:
@@ -197,7 +197,6 @@ func button(text: String, variant: String = "blue", icon_name: String = "", min_
 	b.add_theme_font_size_override("font_size", font_size)
 	b.focus_mode = Control.FOCUS_NONE
 	b.clip_text = false
-	b.autowrap_mode = TextServer.AUTOWRAP_WORD_SMART
 	if variant != "blue":
 		color_button(b, variant)
 	if icon_name != "" and Assets.ui.has(icon_name):
