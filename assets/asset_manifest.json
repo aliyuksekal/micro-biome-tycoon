@@ -1,0 +1,3016 @@
+{
+ "project": "Micro-Biome Tycoon",
+ "generated_by": "tools/make_manifest.py",
+ "conventions": {
+  "pivot": "Normalize (x, y); karakterlerde ayak tabanı (0.5, 0.95).",
+  "atlas": "Atlas kullanılmıyor; her kare ayrı PNG. Godot yükleme sırasında tümünü bir kez önbelleğe alır (scripts/autoload/assets.gd).",
+  "animation": "idle_0..3 döngü ≈6 fps (0.16 s/kare); happy/eating/damaged olaylarda 0.4-0.7 s gösterilir, ardından idle'a dönülür.",
+  "runtime_sprite_size": "Durum sprite'ları 256x256 (ekranda 96-160 px). Portreler 512x512.",
+  "text_in_images": "Görsellerde metin yok; tüm metinler Godot UI ile çizilir."
+ },
+ "assets": [
+  {
+   "id": "character.lactobacillus",
+   "path": "assets/characters/lactobacillus.png",
+   "res_path": "res://assets/characters/lactobacillus.png",
+   "type": "character_portrait",
+   "side": "good",
+   "source_resolution": [
+    512,
+    512
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Menü, tanıtım, bilgi pencereleri. Parlak gök mavisi tombul kapsül gövde; başlangıç türü.",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.lactobacillus.source_1024",
+   "path": "assets/characters/source_1024/lactobacillus.png",
+   "type": "character_source",
+   "side": "good",
+   "source_resolution": [
+    1024,
+    1024
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "exported_in_game": false,
+   "usage": "Yüksek çözünürlüklü kaynak (mağaza görselleri, ikon). Oyuna dahil edilmez. Not: referans kesitinden ~2x büyütülmüştür.",
+   "import": null
+  },
+  {
+   "id": "character.lactobacillus.idle_0",
+   "path": "assets/characters/lactobacillus/idle_0.png",
+   "res_path": "res://assets/characters/lactobacillus/idle_0.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "idle_0",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 1/4 (≈6 fps döngü)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.lactobacillus.idle_1",
+   "path": "assets/characters/lactobacillus/idle_1.png",
+   "res_path": "res://assets/characters/lactobacillus/idle_1.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "idle_1",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 2/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.lactobacillus.idle_2",
+   "path": "assets/characters/lactobacillus/idle_2.png",
+   "res_path": "res://assets/characters/lactobacillus/idle_2.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "idle_2",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 3/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.lactobacillus.idle_3",
+   "path": "assets/characters/lactobacillus/idle_3.png",
+   "res_path": "res://assets/characters/lactobacillus/idle_3.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "idle_3",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 4/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.lactobacillus.happy",
+   "path": "assets/characters/lactobacillus/happy.png",
+   "res_path": "res://assets/characters/lactobacillus/happy.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "happy",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Mutlu: yerleştirme/üretim anı (parıltı efektli)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.lactobacillus.eating",
+   "path": "assets/characters/lactobacillus/eating.png",
+   "res_path": "res://assets/characters/lactobacillus/eating.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "eating",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Yemek yiyor: besleme anı (besin damlası efektli)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.lactobacillus.damaged",
+   "path": "assets/characters/lactobacillus/damaged.png",
+   "res_path": "res://assets/characters/lactobacillus/damaged.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "damaged",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Hasar aldı: dokunma/saldırı anı (kırmızı ton + darbe yıldızı)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.bifidobacterium",
+   "path": "assets/characters/bifidobacterium.png",
+   "res_path": "res://assets/characters/bifidobacterium.png",
+   "type": "character_portrait",
+   "side": "good",
+   "source_resolution": [
+    512,
+    512
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Menü, tanıtım, bilgi pencereleri. Mor, belirgin Y şeklinde gövde; bariyeri onarır.",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.bifidobacterium.source_1024",
+   "path": "assets/characters/source_1024/bifidobacterium.png",
+   "type": "character_source",
+   "side": "good",
+   "source_resolution": [
+    1024,
+    1024
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "exported_in_game": false,
+   "usage": "Yüksek çözünürlüklü kaynak (mağaza görselleri, ikon). Oyuna dahil edilmez. Not: referans kesitinden ~2x büyütülmüştür.",
+   "import": null
+  },
+  {
+   "id": "character.bifidobacterium.idle_0",
+   "path": "assets/characters/bifidobacterium/idle_0.png",
+   "res_path": "res://assets/characters/bifidobacterium/idle_0.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "idle_0",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 1/4 (≈6 fps döngü)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.bifidobacterium.idle_1",
+   "path": "assets/characters/bifidobacterium/idle_1.png",
+   "res_path": "res://assets/characters/bifidobacterium/idle_1.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "idle_1",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 2/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.bifidobacterium.idle_2",
+   "path": "assets/characters/bifidobacterium/idle_2.png",
+   "res_path": "res://assets/characters/bifidobacterium/idle_2.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "idle_2",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 3/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.bifidobacterium.idle_3",
+   "path": "assets/characters/bifidobacterium/idle_3.png",
+   "res_path": "res://assets/characters/bifidobacterium/idle_3.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "idle_3",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 4/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.bifidobacterium.happy",
+   "path": "assets/characters/bifidobacterium/happy.png",
+   "res_path": "res://assets/characters/bifidobacterium/happy.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "happy",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Mutlu: yerleştirme/üretim anı (parıltı efektli)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.bifidobacterium.eating",
+   "path": "assets/characters/bifidobacterium/eating.png",
+   "res_path": "res://assets/characters/bifidobacterium/eating.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "eating",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Yemek yiyor: besleme anı (besin damlası efektli)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.bifidobacterium.damaged",
+   "path": "assets/characters/bifidobacterium/damaged.png",
+   "res_path": "res://assets/characters/bifidobacterium/damaged.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "damaged",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Hasar aldı: dokunma/saldırı anı (kırmızı ton + darbe yıldızı)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.streptococcus",
+   "path": "assets/characters/streptococcus.png",
+   "res_path": "res://assets/characters/streptococcus.png",
+   "type": "character_portrait",
+   "side": "good",
+   "source_resolution": [
+    512,
+    512
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Menü, tanıtım, bilgi pencereleri. Lime yeşili yuvarlak hücre zinciri; komşu mikroplara saldırır.",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.streptococcus.source_1024",
+   "path": "assets/characters/source_1024/streptococcus.png",
+   "type": "character_source",
+   "side": "good",
+   "source_resolution": [
+    1024,
+    1024
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "exported_in_game": false,
+   "usage": "Yüksek çözünürlüklü kaynak (mağaza görselleri, ikon). Oyuna dahil edilmez. Not: referans kesitinden ~2x büyütülmüştür.",
+   "import": null
+  },
+  {
+   "id": "character.streptococcus.idle_0",
+   "path": "assets/characters/streptococcus/idle_0.png",
+   "res_path": "res://assets/characters/streptococcus/idle_0.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "idle_0",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 1/4 (≈6 fps döngü)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.streptococcus.idle_1",
+   "path": "assets/characters/streptococcus/idle_1.png",
+   "res_path": "res://assets/characters/streptococcus/idle_1.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "idle_1",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 2/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.streptococcus.idle_2",
+   "path": "assets/characters/streptococcus/idle_2.png",
+   "res_path": "res://assets/characters/streptococcus/idle_2.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "idle_2",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 3/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.streptococcus.idle_3",
+   "path": "assets/characters/streptococcus/idle_3.png",
+   "res_path": "res://assets/characters/streptococcus/idle_3.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "idle_3",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 4/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.streptococcus.happy",
+   "path": "assets/characters/streptococcus/happy.png",
+   "res_path": "res://assets/characters/streptococcus/happy.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "happy",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Mutlu: yerleştirme/üretim anı (parıltı efektli)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.streptococcus.eating",
+   "path": "assets/characters/streptococcus/eating.png",
+   "res_path": "res://assets/characters/streptococcus/eating.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "eating",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Yemek yiyor: besleme anı (besin damlası efektli)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.streptococcus.damaged",
+   "path": "assets/characters/streptococcus/damaged.png",
+   "res_path": "res://assets/characters/streptococcus/damaged.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "damaged",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Hasar aldı: dokunma/saldırı anı (kırmızı ton + darbe yıldızı)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.e_faecalis",
+   "path": "assets/characters/e_faecalis.png",
+   "res_path": "res://assets/characters/e_faecalis.png",
+   "type": "character_portrait",
+   "side": "good",
+   "source_resolution": [
+    512,
+    512
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Menü, tanıtım, bilgi pencereleri. Turkuaz yuvarlak hücre kümesi; komşu karoları korur.",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.e_faecalis.source_1024",
+   "path": "assets/characters/source_1024/e_faecalis.png",
+   "type": "character_source",
+   "side": "good",
+   "source_resolution": [
+    1024,
+    1024
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "exported_in_game": false,
+   "usage": "Yüksek çözünürlüklü kaynak (mağaza görselleri, ikon). Oyuna dahil edilmez. Not: referans kesitinden ~2x büyütülmüştür.",
+   "import": null
+  },
+  {
+   "id": "character.e_faecalis.idle_0",
+   "path": "assets/characters/e_faecalis/idle_0.png",
+   "res_path": "res://assets/characters/e_faecalis/idle_0.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "idle_0",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 1/4 (≈6 fps döngü)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.e_faecalis.idle_1",
+   "path": "assets/characters/e_faecalis/idle_1.png",
+   "res_path": "res://assets/characters/e_faecalis/idle_1.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "idle_1",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 2/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.e_faecalis.idle_2",
+   "path": "assets/characters/e_faecalis/idle_2.png",
+   "res_path": "res://assets/characters/e_faecalis/idle_2.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "idle_2",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 3/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.e_faecalis.idle_3",
+   "path": "assets/characters/e_faecalis/idle_3.png",
+   "res_path": "res://assets/characters/e_faecalis/idle_3.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "idle_3",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 4/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.e_faecalis.happy",
+   "path": "assets/characters/e_faecalis/happy.png",
+   "res_path": "res://assets/characters/e_faecalis/happy.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "happy",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Mutlu: yerleştirme/üretim anı (parıltı efektli)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.e_faecalis.eating",
+   "path": "assets/characters/e_faecalis/eating.png",
+   "res_path": "res://assets/characters/e_faecalis/eating.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "eating",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Yemek yiyor: besleme anı (besin damlası efektli)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.e_faecalis.damaged",
+   "path": "assets/characters/e_faecalis/damaged.png",
+   "res_path": "res://assets/characters/e_faecalis/damaged.png",
+   "type": "character_state",
+   "side": "good",
+   "state": "damaged",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Hasar aldı: dokunma/saldırı anı (kırmızı ton + darbe yıldızı)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.pathogen",
+   "path": "assets/characters/pathogen.png",
+   "res_path": "res://assets/characters/pathogen.png",
+   "type": "character_portrait",
+   "side": "bad",
+   "source_resolution": [
+    512,
+    512
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Menü, tanıtım, bilgi pencereleri. Kırmızı dikenli küre; bariyeri yıpratır, yayılır.",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.pathogen.source_1024",
+   "path": "assets/characters/source_1024/pathogen.png",
+   "type": "character_source",
+   "side": "bad",
+   "source_resolution": [
+    1024,
+    1024
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "exported_in_game": false,
+   "usage": "Yüksek çözünürlüklü kaynak (mağaza görselleri, ikon). Oyuna dahil edilmez. Not: referans kesitinden ~2x büyütülmüştür.",
+   "import": null
+  },
+  {
+   "id": "character.pathogen.idle_0",
+   "path": "assets/characters/pathogen/idle_0.png",
+   "res_path": "res://assets/characters/pathogen/idle_0.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "idle_0",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 1/4 (≈6 fps döngü)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.pathogen.idle_1",
+   "path": "assets/characters/pathogen/idle_1.png",
+   "res_path": "res://assets/characters/pathogen/idle_1.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "idle_1",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 2/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.pathogen.idle_2",
+   "path": "assets/characters/pathogen/idle_2.png",
+   "res_path": "res://assets/characters/pathogen/idle_2.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "idle_2",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 3/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.pathogen.idle_3",
+   "path": "assets/characters/pathogen/idle_3.png",
+   "res_path": "res://assets/characters/pathogen/idle_3.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "idle_3",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 4/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.pathogen.happy",
+   "path": "assets/characters/pathogen/happy.png",
+   "res_path": "res://assets/characters/pathogen/happy.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "happy",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Mutlu: yerleştirme/üretim anı (parıltı efektli)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.pathogen.eating",
+   "path": "assets/characters/pathogen/eating.png",
+   "res_path": "res://assets/characters/pathogen/eating.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "eating",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Yemek yiyor: besleme anı (besin damlası efektli)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.pathogen.damaged",
+   "path": "assets/characters/pathogen/damaged.png",
+   "res_path": "res://assets/characters/pathogen/damaged.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "damaged",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Hasar aldı: dokunma/saldırı anı (kırmızı ton + darbe yıldızı)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.inflammatory",
+   "path": "assets/characters/inflammatory.png",
+   "res_path": "res://assets/characters/inflammatory.png",
+   "type": "character_portrait",
+   "side": "bad",
+   "source_resolution": [
+    512,
+    512
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Menü, tanıtım, bilgi pencereleri. Mor/magenta düzensiz kabarcıklı gövde (Pathogen'den farklı siluet); komşu kolonilere zarar verir.",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.inflammatory.source_1024",
+   "path": "assets/characters/source_1024/inflammatory.png",
+   "type": "character_source",
+   "side": "bad",
+   "source_resolution": [
+    1024,
+    1024
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "exported_in_game": false,
+   "usage": "Yüksek çözünürlüklü kaynak (mağaza görselleri, ikon). Oyuna dahil edilmez. Not: referans kesitinden ~2x büyütülmüştür.",
+   "import": null
+  },
+  {
+   "id": "character.inflammatory.idle_0",
+   "path": "assets/characters/inflammatory/idle_0.png",
+   "res_path": "res://assets/characters/inflammatory/idle_0.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "idle_0",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 1/4 (≈6 fps döngü)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.inflammatory.idle_1",
+   "path": "assets/characters/inflammatory/idle_1.png",
+   "res_path": "res://assets/characters/inflammatory/idle_1.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "idle_1",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 2/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.inflammatory.idle_2",
+   "path": "assets/characters/inflammatory/idle_2.png",
+   "res_path": "res://assets/characters/inflammatory/idle_2.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "idle_2",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 3/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.inflammatory.idle_3",
+   "path": "assets/characters/inflammatory/idle_3.png",
+   "res_path": "res://assets/characters/inflammatory/idle_3.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "idle_3",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 4/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.inflammatory.happy",
+   "path": "assets/characters/inflammatory/happy.png",
+   "res_path": "res://assets/characters/inflammatory/happy.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "happy",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Mutlu: yerleştirme/üretim anı (parıltı efektli)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.inflammatory.eating",
+   "path": "assets/characters/inflammatory/eating.png",
+   "res_path": "res://assets/characters/inflammatory/eating.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "eating",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Yemek yiyor: besleme anı (besin damlası efektli)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.inflammatory.damaged",
+   "path": "assets/characters/inflammatory/damaged.png",
+   "res_path": "res://assets/characters/inflammatory/damaged.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "damaged",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Hasar aldı: dokunma/saldırı anı (kırmızı ton + darbe yıldızı)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.c_difficile",
+   "path": "assets/characters/c_difficile.png",
+   "res_path": "res://assets/characters/c_difficile.png",
+   "type": "character_portrait",
+   "side": "bad",
+   "source_resolution": [
+    512,
+    512
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Menü, tanıtım, bilgi pencereleri. Turuncu-kahverengi uzun oval gövde, nodüllü; güçlü tehdit.",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.c_difficile.source_1024",
+   "path": "assets/characters/source_1024/c_difficile.png",
+   "type": "character_source",
+   "side": "bad",
+   "source_resolution": [
+    1024,
+    1024
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "exported_in_game": false,
+   "usage": "Yüksek çözünürlüklü kaynak (mağaza görselleri, ikon). Oyuna dahil edilmez. Not: referans kesitinden ~2x büyütülmüştür.",
+   "import": null
+  },
+  {
+   "id": "character.c_difficile.idle_0",
+   "path": "assets/characters/c_difficile/idle_0.png",
+   "res_path": "res://assets/characters/c_difficile/idle_0.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "idle_0",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 1/4 (≈6 fps döngü)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.c_difficile.idle_1",
+   "path": "assets/characters/c_difficile/idle_1.png",
+   "res_path": "res://assets/characters/c_difficile/idle_1.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "idle_1",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 2/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.c_difficile.idle_2",
+   "path": "assets/characters/c_difficile/idle_2.png",
+   "res_path": "res://assets/characters/c_difficile/idle_2.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "idle_2",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 3/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.c_difficile.idle_3",
+   "path": "assets/characters/c_difficile/idle_3.png",
+   "res_path": "res://assets/characters/c_difficile/idle_3.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "idle_3",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Idle animasyon karesi 4/4",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.c_difficile.happy",
+   "path": "assets/characters/c_difficile/happy.png",
+   "res_path": "res://assets/characters/c_difficile/happy.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "happy",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Mutlu: yerleştirme/üretim anı (parıltı efektli)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.c_difficile.eating",
+   "path": "assets/characters/c_difficile/eating.png",
+   "res_path": "res://assets/characters/c_difficile/eating.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "eating",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Yemek yiyor: besleme anı (besin damlası efektli)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "character.c_difficile.damaged",
+   "path": "assets/characters/c_difficile/damaged.png",
+   "res_path": "res://assets/characters/c_difficile/damaged.png",
+   "type": "character_state",
+   "side": "bad",
+   "state": "damaged",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.95
+   ],
+   "recommended_display_px": [
+    96,
+    160
+   ],
+   "usage": "Hasar aldı: dokunma/saldırı anı (kırmızı ton + darbe yıldızı)",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps",
+    "note": "Küçük ölçekte (96-160 px) bulanıklık olmaması için kayıpsız + mipmap."
+   }
+  },
+  {
+   "id": "ui.alert",
+   "path": "assets/ui/alert.png",
+   "res_path": "res://assets/ui/alert.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.check",
+   "path": "assets/ui/check.png",
+   "res_path": "res://assets/ui/check.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.coin",
+   "path": "assets/ui/coin.png",
+   "res_path": "res://assets/ui/coin.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.crown",
+   "path": "assets/ui/crown.png",
+   "res_path": "res://assets/ui/crown.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    160,
+    160
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.dna",
+   "path": "assets/ui/dna.png",
+   "res_path": "res://assets/ui/dna.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.energy",
+   "path": "assets/ui/energy.png",
+   "res_path": "res://assets/ui/energy.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.fiber",
+   "path": "assets/ui/fiber.png",
+   "res_path": "res://assets/ui/fiber.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.gear",
+   "path": "assets/ui/gear.png",
+   "res_path": "res://assets/ui/gear.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.gem",
+   "path": "assets/ui/gem.png",
+   "res_path": "res://assets/ui/gem.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.gift",
+   "path": "assets/ui/gift.png",
+   "res_path": "res://assets/ui/gift.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    192,
+    192
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.glucose",
+   "path": "assets/ui/glucose.png",
+   "res_path": "res://assets/ui/glucose.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.growth_boost",
+   "path": "assets/ui/growth_boost.png",
+   "res_path": "res://assets/ui/growth_boost.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.gut",
+   "path": "assets/ui/gut.png",
+   "res_path": "res://assets/ui/gut.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    192,
+    192
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.healing",
+   "path": "assets/ui/healing.png",
+   "res_path": "res://assets/ui/healing.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.heart",
+   "path": "assets/ui/heart.png",
+   "res_path": "res://assets/ui/heart.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.info",
+   "path": "assets/ui/info.png",
+   "res_path": "res://assets/ui/info.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.nutrient_drop",
+   "path": "assets/ui/nutrient_drop.png",
+   "res_path": "res://assets/ui/nutrient_drop.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.pause",
+   "path": "assets/ui/pause.png",
+   "res_path": "res://assets/ui/pause.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.play",
+   "path": "assets/ui/play.png",
+   "res_path": "res://assets/ui/play.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.prebiotic",
+   "path": "assets/ui/prebiotic.png",
+   "res_path": "res://assets/ui/prebiotic.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.shield",
+   "path": "assets/ui/shield.png",
+   "res_path": "res://assets/ui/shield.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.shield_badge",
+   "path": "assets/ui/shield_badge.png",
+   "res_path": "res://assets/ui/shield_badge.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.star",
+   "path": "assets/ui/star.png",
+   "res_path": "res://assets/ui/star.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "ui.trophy",
+   "path": "assets/ui/trophy.png",
+   "res_path": "res://assets/ui/trophy.png",
+   "type": "ui_icon",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "environment.coral_pink",
+   "path": "assets/environment/coral_pink.png",
+   "res_path": "res://assets/environment/coral_pink.png",
+   "type": "environment",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    80,
+    200
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "environment.coral_purple",
+   "path": "assets/environment/coral_purple.png",
+   "res_path": "res://assets/environment/coral_purple.png",
+   "type": "environment",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    80,
+    200
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "environment.gut_bg_dark",
+   "path": "assets/environment/gut_bg_dark.jpg",
+   "res_path": "res://assets/environment/gut_bg_dark.jpg",
+   "type": "background",
+   "source_resolution": [
+    720,
+    1600
+   ],
+   "color_mode": "RGB",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": "fullscreen (cover)",
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossy (JPG kaynak)",
+    "mipmaps/generate": true
+   }
+  },
+  {
+   "id": "environment.gut_bg_light",
+   "path": "assets/environment/gut_bg_light.jpg",
+   "res_path": "res://assets/environment/gut_bg_light.jpg",
+   "type": "background",
+   "source_resolution": [
+    720,
+    1600
+   ],
+   "color_mode": "RGB",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": "fullscreen (cover)",
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossy (JPG kaynak)",
+    "mipmaps/generate": true
+   }
+  },
+  {
+   "id": "environment.plants",
+   "path": "assets/environment/plants.png",
+   "res_path": "res://assets/environment/plants.png",
+   "type": "environment",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    80,
+    200
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "environment.tile_block",
+   "path": "assets/environment/tile_block.png",
+   "res_path": "res://assets/environment/tile_block.png",
+   "type": "grid_tile",
+   "source_resolution": [
+    160,
+    160
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    80,
+    140
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "environment.tile_blue",
+   "path": "assets/environment/tile_blue.png",
+   "res_path": "res://assets/environment/tile_blue.png",
+   "type": "grid_tile",
+   "source_resolution": [
+    160,
+    160
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    80,
+    140
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "environment.tile_boost",
+   "path": "assets/environment/tile_boost.png",
+   "res_path": "res://assets/environment/tile_boost.png",
+   "type": "grid_tile",
+   "source_resolution": [
+    160,
+    160
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    80,
+    140
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "environment.tile_danger",
+   "path": "assets/environment/tile_danger.png",
+   "res_path": "res://assets/environment/tile_danger.png",
+   "type": "grid_tile",
+   "source_resolution": [
+    160,
+    160
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    80,
+    140
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "environment.tile_green",
+   "path": "assets/environment/tile_green.png",
+   "res_path": "res://assets/environment/tile_green.png",
+   "type": "grid_tile",
+   "source_resolution": [
+    160,
+    160
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    80,
+    140
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "environment.tile_heal",
+   "path": "assets/environment/tile_heal.png",
+   "res_path": "res://assets/environment/tile_heal.png",
+   "type": "grid_tile",
+   "source_resolution": [
+    160,
+    160
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    80,
+    140
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "environment.tile_orange",
+   "path": "assets/environment/tile_orange.png",
+   "res_path": "res://assets/environment/tile_orange.png",
+   "type": "grid_tile",
+   "source_resolution": [
+    160,
+    160
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    80,
+    140
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "environment.tile_pink",
+   "path": "assets/environment/tile_pink.png",
+   "res_path": "res://assets/environment/tile_pink.png",
+   "type": "grid_tile",
+   "source_resolution": [
+    160,
+    160
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    80,
+    140
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "environment.tile_purple",
+   "path": "assets/environment/tile_purple.png",
+   "res_path": "res://assets/environment/tile_purple.png",
+   "type": "grid_tile",
+   "source_resolution": [
+    160,
+    160
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    80,
+    140
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "environment.tubes_green",
+   "path": "assets/environment/tubes_green.png",
+   "res_path": "res://assets/environment/tubes_green.png",
+   "type": "environment",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    80,
+    200
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "vfx.bubble",
+   "path": "assets/vfx/bubble.png",
+   "res_path": "res://assets/vfx/bubble.png",
+   "type": "vfx",
+   "source_resolution": [
+    96,
+    96
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "vfx.heart",
+   "path": "assets/vfx/heart.png",
+   "res_path": "res://assets/vfx/heart.png",
+   "type": "vfx",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "vfx.hit",
+   "path": "assets/vfx/hit.png",
+   "res_path": "res://assets/vfx/hit.png",
+   "type": "vfx",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "vfx.magic",
+   "path": "assets/vfx/magic.png",
+   "res_path": "res://assets/vfx/magic.png",
+   "type": "vfx",
+   "source_resolution": [
+    96,
+    96
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "vfx.plus",
+   "path": "assets/vfx/plus.png",
+   "res_path": "res://assets/vfx/plus.png",
+   "type": "vfx",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "vfx.sparkle",
+   "path": "assets/vfx/sparkle.png",
+   "res_path": "res://assets/vfx/sparkle.png",
+   "type": "vfx",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "vfx.swirl",
+   "path": "assets/vfx/swirl.png",
+   "res_path": "res://assets/vfx/swirl.png",
+   "type": "vfx",
+   "source_resolution": [
+    128,
+    128
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": [
+    32,
+    72
+   ],
+   "usage": "",
+   "import": {
+    "compress/mode": "Lossless",
+    "mipmaps/generate": true,
+    "texture_filter": "linear_with_mipmaps"
+   }
+  },
+  {
+   "id": "icons.adaptive_background_432",
+   "path": "assets/icons/adaptive_background_432.png",
+   "res_path": "res://assets/icons/adaptive_background_432.png",
+   "type": "launcher_icon",
+   "source_resolution": [
+    432,
+    432
+   ],
+   "color_mode": "RGB",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": "launcher",
+   "usage": "",
+   "import": null
+  },
+  {
+   "id": "icons.adaptive_foreground_432",
+   "path": "assets/icons/adaptive_foreground_432.png",
+   "res_path": "res://assets/icons/adaptive_foreground_432.png",
+   "type": "launcher_icon",
+   "source_resolution": [
+    432,
+    432
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": "launcher",
+   "usage": "",
+   "import": null
+  },
+  {
+   "id": "icons.adaptive_monochrome_432",
+   "path": "assets/icons/adaptive_monochrome_432.png",
+   "res_path": "res://assets/icons/adaptive_monochrome_432.png",
+   "type": "launcher_icon",
+   "source_resolution": [
+    432,
+    432
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": "launcher",
+   "usage": "",
+   "import": null
+  },
+  {
+   "id": "icons.icon_192",
+   "path": "assets/icons/icon_192.png",
+   "res_path": "res://assets/icons/icon_192.png",
+   "type": "launcher_icon",
+   "source_resolution": [
+    192,
+    192
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": "launcher",
+   "usage": "",
+   "import": null
+  },
+  {
+   "id": "icons.splash_icon",
+   "path": "assets/icons/splash_icon.png",
+   "res_path": "res://assets/icons/splash_icon.png",
+   "type": "launcher_icon",
+   "source_resolution": [
+    256,
+    256
+   ],
+   "color_mode": "RGBA",
+   "pivot": [
+    0.5,
+    0.5
+   ],
+   "recommended_display_px": "launcher",
+   "usage": "",
+   "import": null
+  },
+  {
+   "id": "audio.alert",
+   "path": "assets/audio/alert.wav",
+   "type": "sfx",
+   "format": "WAV 22050 Hz mono 16-bit",
+   "usage": "Prosedürel üretildi (tools/make_audio.py)"
+  },
+  {
+   "id": "audio.button",
+   "path": "assets/audio/button.wav",
+   "type": "sfx",
+   "format": "WAV 22050 Hz mono 16-bit",
+   "usage": "Prosedürel üretildi (tools/make_audio.py)"
+  },
+  {
+   "id": "audio.coin",
+   "path": "assets/audio/coin.wav",
+   "type": "sfx",
+   "format": "WAV 22050 Hz mono 16-bit",
+   "usage": "Prosedürel üretildi (tools/make_audio.py)"
+  },
+  {
+   "id": "audio.defeat",
+   "path": "assets/audio/defeat.wav",
+   "type": "sfx",
+   "format": "WAV 22050 Hz mono 16-bit",
+   "usage": "Prosedürel üretildi (tools/make_audio.py)"
+  },
+  {
+   "id": "audio.eat",
+   "path": "assets/audio/eat.wav",
+   "type": "sfx",
+   "format": "WAV 22050 Hz mono 16-bit",
+   "usage": "Prosedürel üretildi (tools/make_audio.py)"
+  },
+  {
+   "id": "audio.gameover",
+   "path": "assets/audio/gameover.wav",
+   "type": "sfx",
+   "format": "WAV 22050 Hz mono 16-bit",
+   "usage": "Prosedürel üretildi (tools/make_audio.py)"
+  },
+  {
+   "id": "audio.gift",
+   "path": "assets/audio/gift.wav",
+   "type": "sfx",
+   "format": "WAV 22050 Hz mono 16-bit",
+   "usage": "Prosedürel üretildi (tools/make_audio.py)"
+  },
+  {
+   "id": "audio.hit",
+   "path": "assets/audio/hit.wav",
+   "type": "sfx",
+   "format": "WAV 22050 Hz mono 16-bit",
+   "usage": "Prosedürel üretildi (tools/make_audio.py)"
+  },
+  {
+   "id": "audio.levelup",
+   "path": "assets/audio/levelup.wav",
+   "type": "sfx",
+   "format": "WAV 22050 Hz mono 16-bit",
+   "usage": "Prosedürel üretildi (tools/make_audio.py)"
+  },
+  {
+   "id": "audio.music_loop",
+   "path": "assets/audio/music_loop.wav",
+   "type": "music",
+   "format": "WAV 22050 Hz mono 16-bit",
+   "usage": "Prosedürel üretildi (tools/make_audio.py)"
+  },
+  {
+   "id": "audio.place",
+   "path": "assets/audio/place.wav",
+   "type": "sfx",
+   "format": "WAV 22050 Hz mono 16-bit",
+   "usage": "Prosedürel üretildi (tools/make_audio.py)"
+  },
+  {
+   "id": "audio.tap",
+   "path": "assets/audio/tap.wav",
+   "type": "sfx",
+   "format": "WAV 22050 Hz mono 16-bit",
+   "usage": "Prosedürel üretildi (tools/make_audio.py)"
+  }
+ ]
+}
