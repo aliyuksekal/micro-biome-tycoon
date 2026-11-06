@@ -67,10 +67,11 @@ def skeleton(keeper):
     return J, parent, ends
 
 
-def body_sdf(p, J, keeper):
+def body_parts(p, J, keeper):
     g = lambda n: np.array(J[n], np.float32)
     s = 1.04 if keeper else 1.0
     k = 0.035
+    parts = {}
     # gövde
     d = sd_ellipsoid(p, (0, 1.31 * s, -0.005), (0.165 * s, 0.17 * s, 0.11 * s))           # göğüs
     d = smin(d, sd_ellipsoid(p, (0, 1.14 * s, 0.0), (0.14 * s, 0.14 * s, 0.098 * s)), k)    # karın
@@ -82,8 +83,12 @@ def body_sdf(p, J, keeper):
         sh = np.array([0.17 * side * s, 1.43 * s, -0.005], np.float32)
         d = smin(d, sd_ellipsoid(p, sh, (0.07 * s, 0.06 * s, 0.065 * s)), 0.03)              # omuz (deltoid)
         d = smin(d, sd_round_cone(p, (0.05 * side * s, 1.45 * s, -0.01), sh, 0.06 * s, 0.05 * s), 0.04)  # trapez
+    # şort kalçası
+    for side in (1, -1):
+        d = smin(d, sd_round_cone(p, (0.07 * side * s, 0.97 * s, 0), (0.09 * side * s, 0.86 * s, 0.005), 0.085 * s, 0.085 * s), 0.02)
+    parts["torso"] = d
     # boyun ve baş
-    d = smin(d, sd_round_cone(p, g("Neck") - [0, 0.03, 0], g("Head") + [0, 0.02, 0], 0.056 * s, 0.05 * s), 0.03)
+    d = sd_round_cone(p, g("Neck") - [0, 0.03, 0], g("Head") + [0, 0.02, 0], 0.056 * s, 0.05 * s)
     hc = g("Head")
     head = sd_ellipsoid(p, hc + [0, 0.10 * s, 0.0], (0.087 * s, 0.112 * s, 0.10 * s))
     head = smin(head, sd_ellipsoid(p, hc + [0, 0.045 * s, 0.028 * s], (0.066 * s, 0.06 * s, 0.072 * s)), 0.03)  # çene
@@ -96,7 +101,7 @@ def body_sdf(p, J, keeper):
     hair = sd_ellipsoid(p, hc + [0, 0.13 * s, -0.008], (0.093 * s, 0.09 * s, 0.106 * s))
     hair = np.maximum(hair, -(p[:, 1] - (hc[1] + 0.105 * s)))  # yalnız üst kısım
     head = smin(head, hair, 0.01)
-    d = smin(d, head, 0.02)
+    parts["head"] = smin(d, head, 0.02)
     # kollar
     for side in ("L", "R"):
         ua, fa, ha = g("UpperArm." + side), g("ForeArm." + side), g("Hand." + side)
@@ -109,7 +114,7 @@ def body_sdf(p, J, keeper):
         hr = (0.03 * s, 0.058 * s, 0.045 * s) if keeper else (0.022 * s, 0.05 * s, 0.038 * s)
         arm = smin(arm, sd_ellipsoid(p, hand_c, hr), 0.02)
         arm = smin(arm, sd_ellipsoid(p, ha + [-0.0 * sx, -0.035 * s, 0.04 * s], (0.012 * s, 0.03 * s, 0.012 * s)), 0.01)  # başparmak
-        d = smin(d, arm, 0.03)
+        parts["arm" + side] = arm
     # bacaklar
     for side in ("L", "R"):
         ul, lg, ft = g("UpLeg." + side), g("Leg." + side), g("Foot." + side)
@@ -119,11 +124,30 @@ def body_sdf(p, J, keeper):
         leg = smin(leg, sd_ellipsoid(p, lg * 0.72 + ft * 0.28 + [0, 0, -0.03], (0.048 * s, 0.10 * s, 0.05 * s)), 0.03)  # baldır
         toe = np.array(J["Foot." + side], np.float32) + [0, -0.055, 0.17 * s]
         leg = smin(leg, sd_round_cone(p, ft + [0, -0.04, -0.035], toe, 0.042 * s, 0.035 * s), 0.02)  # krampon
-        d = smin(d, leg, 0.035)
-    # şort ve formanın hafif bolluğu
-    for side in (1, -1):
-        d = smin(d, sd_round_cone(p, (0.09 * side * s, 0.95 * s, 0), (0.11 * side * s, 0.76 * s, 0.01), 0.088 * s, 0.083 * s), 0.02)
+        sx = 1 if side == "L" else -1
+        leg = smin(leg, sd_round_cone(p, (0.1 * sx * s, 0.86 * s, 0.005), (0.11 * sx * s, 0.76 * s, 0.01), 0.086 * s, 0.083 * s), 0.02)  # şort paçası
+        parts["leg" + side] = leg
+    return parts
+
+
+PART_ORDER = ["torso", "head", "armL", "armR", "legL", "legR"]
+
+
+def body_sdf(p, J, keeper):
+    parts = body_parts(p, J, keeper)
+    d = parts["torso"]
+    d = smin(d, parts["head"], 0.02)
+    for k in ("armL", "armR"):
+        d = smin(d, parts[k], 0.03)
+    for k in ("legL", "legR"):
+        d = smin(d, parts[k], 0.035)
     return d
+
+
+def part_index(v, J, keeper):
+    parts = body_parts(v, J, keeper)
+    M = np.stack([parts[k] for k in PART_ORDER], 1)
+    return np.argmin(M, axis=1)
 
 
 def regions(v, J, keeper):
@@ -178,7 +202,17 @@ def ao(v, n, J, keeper):
     return np.clip(1.0 - acc * 0.55, 0.25, 1.0)
 
 
-def skin_weights(v, J, parent, ends, names):
+ALLOWED = {
+    "torso": ["Hips", "Spine", "Chest", "Neck", "Shoulder.L", "Shoulder.R", "UpLeg.L", "UpLeg.R"],
+    "head": ["Neck", "Head", "Chest"],
+    "armL": ["Shoulder.L", "UpperArm.L", "ForeArm.L", "Hand.L", "Chest"],
+    "armR": ["Shoulder.R", "UpperArm.R", "ForeArm.R", "Hand.R", "Chest"],
+    "legL": ["Hips", "UpLeg.L", "Leg.L", "Foot.L"],
+    "legR": ["Hips", "UpLeg.R", "Leg.R", "Foot.R"],
+}
+
+
+def skin_weights(v, J, parent, ends, names, part=None):
     segs = []
     for nm in names:
         a = np.array(J[nm], np.float32)
@@ -213,8 +247,19 @@ def skin_weights(v, J, parent, ends, names):
         below_hip = v[:, 1] < 0.9
         for j in arm_ids:
             D[below_hip & (np.abs(v[:, 0]) < 0.2), j] += big
+    if part is not None:
+        for pi, pname in enumerate(PART_ORDER):
+            sel = part == pi
+            for j, nm in enumerate(names):
+                if nm not in ALLOWED[pname]:
+                    D[sel, j] += big
+        # gövdedeki kalça bölgesi uyluklara yalnız alt kısımda bağlansın
+        torso_sel = part == 0
+        for side in ("L", "R"):
+            D[torso_sel & (v[:, 1] > 0.9), idx["UpLeg." + side]] += big
+            D[torso_sel & (v[:, 1] < 1.38), idx["Shoulder." + side]] += big
     mind = D.min(axis=1, keepdims=True)
-    W = np.exp(-((D - mind) / 0.022) ** 2)
+    W = np.exp(-((D - mind) / 0.02) ** 2)
     order = np.argsort(-W, axis=1)[:, :4]
     w4 = np.take_along_axis(W, order, axis=1)
     w4 = w4 / w4.sum(axis=1, keepdims=True)
@@ -315,7 +360,8 @@ def build(keeper, voxel=0.0085):
     cols = np.stack([reg / 10.0, occ, np.zeros(len(verts)), np.ones(len(verts))], 1).astype(np.float32)
     uvs = np.stack([verts[:, 0], verts[:, 1]], 1).astype(np.float32)  # dinlenme konumu (desen kaymasın)
     uv2 = np.stack([reg / 10.0, occ], 1).astype(np.float32)  # bölge + AO (renk dönüşümünden etkilenmesin)
-    jw, ww = skin_weights(verts, J, parent, ends, names)
+    part = part_index(verts, J, keeper)
+    jw, ww = skin_weights(verts, J, parent, ends, names, part)
     os.makedirs(OUT, exist_ok=True)
     name = "keeper" if keeper else "player"
     write_glb(os.path.join(OUT, name + ".glb"), verts, n, cols, faces, jw, ww, J, parent, names, uvs, uv2)

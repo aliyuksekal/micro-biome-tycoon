@@ -227,7 +227,7 @@ func _add_face() -> void:
 	var brow := _std(Color(0.1, 0.07, 0.05), 0.8)
 	var lip := _std(Color(0.62, 0.36, 0.32), 0.5)
 	for sx in [-1.0, 1.0]:
-		var eye := _sphere(0.0135 * s, white)
+		var eye := _sphere(0.0115 * s, white)
 		eye.position = Vector3(sx * 0.033 * s, 0.103 * s, 0.081 * s)
 		eye.scale = Vector3(1.0, 0.75, 0.6)
 		att.add_child(eye)
@@ -240,7 +240,7 @@ func _add_face() -> void:
 		att.add_child(pu)
 		var b := MeshInstance3D.new()
 		var bm := BoxMesh.new()
-		bm.size = Vector3(0.034 * s, 0.0065 * s, 0.01 * s)
+		bm.size = Vector3(0.03 * s, 0.0045 * s, 0.008 * s)
 		b.mesh = bm
 		b.material_override = brow
 		b.position = Vector3(sx * 0.034 * s, 0.124 * s, 0.093 * s)

@@ -27,9 +27,9 @@ var rival_kit: String = "yellow_navy"
 func _ready() -> void:
 	stadium = Stadium.new()
 	add_child(stadium)
-	shooter = PlayerModel.new(false, Color("d9a17c"), Color("2a1a10"))
+	shooter = PlayerModel.new(false, Color("c4875f"), Color("1e140c"))
 	add_child(shooter)
-	keeper = PlayerModel.new(true, Color("c98e6a"), Color("151515"))
+	keeper = PlayerModel.new(true, Color("b27650"), Color("121010"))
 	add_child(keeper)
 	ball = Ball.new()
 	add_child(ball)
@@ -156,14 +156,14 @@ func place_for_shoot(instant: bool = false) -> void:
 	stadium.set_back_net_visible(true)
 	_reset_players()
 	_reset_ball()
-	shooter.position = Vector3(-0.95, 0, 12.35)
+	shooter.position = Vector3(-0.85, 0, 12.55)
 	shooter.rotation = Vector3(0, PI + 0.45, 0)
 	scan.visible = true
 	var portrait: bool = get_viewport().get_visible_rect().size.x < get_viewport().get_visible_rect().size.y
 	if portrait:
 		_set_cam(Vector3(0.45, 1.6, 14.6), Vector3(-0.1, 1.05, 1.0), instant, 0.9)
 	else:
-		_set_cam(Vector3(0.62, 1.32, 14.55), Vector3(-0.12, 1.12, 0.0), instant, 0.9)
+		_set_cam(Vector3(0.55, 1.42, 15.35), Vector3(-0.1, 1.1, 0.0), instant, 0.9)
 
 
 ## Yapay zekâ şut atar: şutçu = rakip forma, kaleci = senin kaleci forman
