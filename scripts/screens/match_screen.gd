@@ -24,6 +24,8 @@ var _pts: PackedVector2Array = PackedVector2Array()
 var _t0: float = 0.0
 var _down: bool = false
 var _bubble_tw: Tween
+var _guess: Label
+var _banner: PanelContainer
 
 
 func build() -> void:
@@ -83,6 +85,18 @@ func build() -> void:
 	_prompt.set_anchors_preset(Control.PRESET_CENTER_BOTTOM)
 	_prompt.position.y -= 40
 	add_child(_prompt)
+	_guess = UiTheme.title("", 30, Color("ff4a4a"), Color("1a0000"), 8)
+	_guess.horizontal_alignment = HORIZONTAL_ALIGNMENT_RIGHT
+	add_child(_guess)
+	_banner = PanelContainer.new()
+	var bnc := Color("06142e")
+	bnc.a = 0.8
+	_banner.add_theme_stylebox_override("panel", UiTheme.box(bnc, 10, Color(1, 1, 1, 0.15), 1, 0, 16))
+	var bl := UiTheme.label(I18n.t("ai_analyzing"), 22, "text")
+	bl.add_theme_color_override("font_color", Color.WHITE)
+	_banner.add_child(bl)
+	_banner.mouse_filter = Control.MOUSE_FILTER_IGNORE
+	add_child(_banner)
 	_hint_btn = UiTheme.button(str(HINT_COST), "purple", "eye", 80, 24)
 	_hint_btn.name = "HintButton"
 	_hint_btn.custom_minimum_size = Vector2(160, 80)
@@ -130,7 +144,15 @@ func on_back() -> bool:
 func _layout() -> void:
 	var vs: Vector2 = size
 	_bubble.reset_size()
-	_bubble.position = Vector2((vs.x - _bubble.size.x) / 2.0, vs.y * 0.2)
+	var kp: Vector2 = main.world.keeper_screen_pos()
+	if main.world.cam_mode == "shoot" and kp.x > 0.0:
+		_bubble.position = Vector2(clampf(kp.x + 60.0, 10.0, vs.x - _bubble.size.x - 10.0), clampf(kp.y + 10.0, 120.0, vs.y - 200.0))
+	else:
+		_bubble.position = Vector2((vs.x - _bubble.size.x) / 2.0, vs.y * 0.22)
+	_banner.reset_size()
+	_banner.position = Vector2((vs.x - _banner.size.x) / 2.0, 118.0)
+	_guess.reset_size()
+	_guess.position = Vector2(vs.x - _guess.size.x - 24.0, vs.y - 300.0)
 	_prompt.reset_size()
 	_prompt.position = Vector2((vs.x - _prompt.size.x) / 2.0, vs.y - _prompt.size.y - 14)
 	_hint_btn.position = Vector2(vs.x - 176, vs.y - 196)
@@ -233,12 +255,24 @@ func _on_phase(ph: String) -> void:
 			_prompt.text = I18n.t("your_turn_shoot")
 			_hint_btn.visible = true
 			_hint_btn.disabled = false
+			_banner.visible = true
+			var best: int = Brain.argmax(game._pred)
+			var side_p: float = 0.0
+			for zi in 9:
+				if zi % 3 == best % 3:
+					side_p += game._pred[zi]
+			_guess.text = I18n.t("ai_guess", {"p": int(round(side_p * 100.0)), "z": I18n.t("zone_%d" % best)})
+			_guess.visible = true
 		"keep":
 			_prompt.text = I18n.t("your_turn_keep")
 			_hint_btn.visible = false
+			_banner.visible = false
+			_guess.visible = false
 		_:
 			_prompt.text = ""
 			_hint_btn.visible = false
+			_banner.visible = false
+			_guess.visible = false
 	_layout()
 
 

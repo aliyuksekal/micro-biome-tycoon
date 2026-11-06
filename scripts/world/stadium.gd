@@ -134,6 +134,45 @@ void fragment() {
 """
 
 
+const FLARE_SHADER := """
+shader_type spatial;
+render_mode unshaded, blend_add, depth_draw_never, cull_disabled;
+void vertex() {
+	MODELVIEW_MATRIX = VIEW_MATRIX * mat4(INV_VIEW_MATRIX[0], INV_VIEW_MATRIX[1], INV_VIEW_MATRIX[2], MODEL_MATRIX[3]);
+}
+void fragment() {
+	float d = length(UV - 0.5) * 2.0;
+	float core = exp(-d * d * 18.0);
+	float halo = exp(-d * 3.2) * 0.35;
+	float rays = pow(max(0.0, 1.0 - abs(UV.y - 0.5) * 18.0), 3.0) * exp(-abs(UV.x - 0.5) * 3.0) * 0.5;
+	ALBEDO = vec3(1.0, 0.97, 0.88) * (core * 3.0 + halo + rays);
+	ALPHA = clamp(core + halo + rays, 0.0, 1.0);
+}
+"""
+
+const FLAG_SHADER := """
+shader_type spatial;
+render_mode cull_disabled;
+uniform vec3 a : source_color = vec3(0.8, 0.1, 0.1);
+uniform vec3 b : source_color = vec3(1.0, 0.8, 0.1);
+uniform float phase = 0.0;
+void vertex() {
+	float w = UV.x;
+	VERTEX.z += sin(UV.x * 6.0 - TIME * 5.0 + phase) * 0.18 * w;
+	VERTEX.y += sin(UV.x * 4.0 - TIME * 4.0 + phase) * 0.06 * w;
+}
+void fragment() {
+	vec3 c = UV.y < 0.5 ? a : b;
+	float shade = 0.75 + 0.25 * sin(UV.x * 6.0 - TIME * 5.0 + phase);
+	ALBEDO = c * shade;
+	ROUGHNESS = 0.8;
+	EMISSION = c * 0.15;
+}
+"""
+
+var flag_mats: Array[ShaderMaterial] = []
+
+
 func _ready() -> void:
 	_build_environment()
 	_build_pitch()
@@ -141,6 +180,7 @@ func _ready() -> void:
 	_build_stands()
 	_build_boards()
 	_build_lights()
+	_build_flags()
 
 
 func _process(delta: float) -> void:
@@ -154,7 +194,34 @@ func _process(delta: float) -> void:
 		net_mat.set_shader_parameter("t_since", _net_t)
 
 
+func _build_flags() -> void:
+	var rng := RandomNumberGenerator.new()
+	rng.seed = 11
+	for i in 14:
+		var mi := MeshInstance3D.new()
+		var pm := PlaneMesh.new()
+		pm.size = Vector2(3.2, 2.0)
+		pm.subdivide_width = 12
+		pm.subdivide_depth = 2
+		pm.orientation = PlaneMesh.FACE_Z
+		mi.mesh = pm
+		var m := _shader_mat(FLAG_SHADER)
+		m.set_shader_parameter("phase", rng.randf() * 6.28)
+		mi.material_override = m
+		flag_mats.append(m)
+		var x: float = -40.0 + i * 6.0 + rng.randf_range(-1.5, 1.5)
+		var row: float = rng.randf_range(0.15, 0.7)
+		mi.position = Vector3(x, 3.5 + row * 12.0, -16.5 - row * 9.0)
+		mi.rotation = Vector3(0, 0, rng.randf_range(-0.25, 0.25))
+		mi.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		add_child(mi)
+
+
 func set_crowd_colors(a1: Color, a2: Color, b1: Color, b2: Color) -> void:
+	for i in flag_mats.size():
+		var fm: ShaderMaterial = flag_mats[i]
+		fm.set_shader_parameter("a", a1 if i % 3 != 2 else b1)
+		fm.set_shader_parameter("b", a2 if i % 3 != 2 else b2)
 	for cm in crowd_mats:
 		cm.set_shader_parameter("c1", a1)
 		cm.set_shader_parameter("c2", a2)
@@ -218,7 +285,10 @@ func _build_environment() -> void:
 	env.glow_intensity = 0.9
 	env.glow_bloom = 0.08
 	env.glow_hdr_threshold = 1.0
-	env.fog_enabled = false
+	env.fog_enabled = true
+	env.fog_light_color = Color(0.12, 0.16, 0.28)
+	env.fog_density = 0.0035
+	env.fog_sky_affect = 0.0
 	var we := WorldEnvironment.new()
 	we.environment = env
 	add_child(we)
@@ -407,3 +477,11 @@ func _build_lights() -> void:
 		panel.material_override = glow
 		add_child(panel)
 		panel.look_at_from_position(p + Vector3(0, 31, 0), Vector3(0, 0, 8), Vector3.UP)
+		var flare := MeshInstance3D.new()
+		var fq := QuadMesh.new()
+		fq.size = Vector2(16, 16)
+		flare.mesh = fq
+		flare.material_override = _shader_mat(FLARE_SHADER)
+		flare.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+		flare.position = p + Vector3(0, 31, 1.0)
+		add_child(flare)

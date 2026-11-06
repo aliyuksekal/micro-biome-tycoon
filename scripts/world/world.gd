@@ -14,6 +14,7 @@ var keeper: PlayerModel
 var ball: Ball
 var camera: Camera3D
 var confetti: CPUParticles3D
+var scan: MeshInstance3D
 var cam_mode: String = "menu"
 var _cam_tw: Tween
 var _orbit: float = 0.0
@@ -39,6 +40,7 @@ func _ready() -> void:
 	add_child(camera)
 	camera.current = true
 	_build_confetti()
+	_build_scan()
 	setup_kits(my_kit, rival_kit)
 	place_menu()
 	get_viewport().size_changed.connect(_fit_camera)
@@ -154,12 +156,14 @@ func place_for_shoot(instant: bool = false) -> void:
 	stadium.set_back_net_visible(true)
 	_reset_players()
 	_reset_ball()
-	shooter.position = Vector3(-1.05, 0, 13.0)
+	shooter.position = Vector3(-0.95, 0, 12.35)
+	shooter.rotation = Vector3(0, PI + 0.45, 0)
+	scan.visible = true
 	var portrait: bool = get_viewport().get_visible_rect().size.x < get_viewport().get_visible_rect().size.y
 	if portrait:
-		_set_cam(Vector3(0.3, 1.9, 15.0), Vector3(0, 1.0, 1.0), instant, 0.9)
+		_set_cam(Vector3(0.45, 1.6, 14.6), Vector3(-0.1, 1.05, 1.0), instant, 0.9)
 	else:
-		_set_cam(Vector3(0.35, 1.75, 15.6), Vector3(0, 1.05, 1.0), instant, 0.9)
+		_set_cam(Vector3(0.62, 1.32, 14.55), Vector3(-0.12, 1.12, 0.0), instant, 0.9)
 
 
 ## Yapay zekâ şut atar: şutçu = rakip forma, kaleci = senin kaleci forman
@@ -174,7 +178,12 @@ func place_for_keep(instant: bool = false) -> void:
 	_set_cam(Vector3(0, 1.7, -2.9), Vector3(0, 0.85, 11.0), instant, 0.9)
 
 
+func keeper_screen_pos() -> Vector2:
+	return camera.unproject_position(keeper.global_position + Vector3(0, 1.9, 0))
+
+
 func _reset_players() -> void:
+	scan.visible = false
 	shooter.position = Vector3(-0.9, 0, 13.6)
 	shooter.rotation = Vector3(0, PI + 0.35, 0)
 	shooter.set_state("idle")
@@ -188,7 +197,9 @@ func _reset_players() -> void:
 func run_up(duration: float = 0.6) -> void:
 	shooter.set_state("run")
 	var tw := create_tween()
-	tw.tween_property(shooter, "position", Vector3(-0.3, 0, 11.4), duration)
+	scan.visible = false
+	tw.tween_property(shooter, "position", Vector3(-0.34, 0, 11.42), duration)
+	tw.parallel().tween_property(shooter, "rotation:y", PI + 0.25, duration)
 	await tw.finished
 	shooter.set_state("kick")
 	await get_tree().create_timer(0.2, false).timeout
@@ -304,6 +315,39 @@ func celebrate_save() -> void:
 func miss_reaction() -> void:
 	shooter.set_state("sad")
 	stadium.excite(0.35, 1.5)
+
+
+const SCAN_SHADER := """
+shader_type spatial;
+render_mode unshaded, blend_add, cull_disabled, depth_draw_never;
+void fragment() {
+	float edge = max(smoothstep(0.42, 0.5, abs(UV.x - 0.5)), smoothstep(0.44, 0.5, abs(UV.y - 0.5)));
+	float corner = step(0.38, abs(UV.x - 0.5)) * step(0.38, abs(UV.y - 0.5));
+	float lines = smoothstep(0.85, 1.0, sin((UV.y * 60.0) - TIME * 6.0) * 0.5 + 0.5);
+	float sweep = exp(-pow((fract(TIME * 0.6) - UV.y) * 9.0, 2.0));
+	float grid = step(0.94, fract(UV.x * 18.0)) + step(0.94, fract(UV.y * 22.0));
+	vec3 c = vec3(0.2, 0.85, 1.0);
+	float a = edge * 0.25 + corner * edge * 0.9 + lines * 0.05 + sweep * 0.35 + grid * 0.04;
+	ALBEDO = c * a * 2.0;
+	ALPHA = clamp(a, 0.0, 1.0);
+}
+"""
+
+
+func _build_scan() -> void:
+	scan = MeshInstance3D.new()
+	var q := QuadMesh.new()
+	q.size = Vector2(1.6, 2.15)
+	scan.mesh = q
+	var sh := Shader.new()
+	sh.code = SCAN_SHADER
+	var m := ShaderMaterial.new()
+	m.shader = sh
+	scan.material_override = m
+	scan.position = Vector3(0, 1.0, 0.6)
+	scan.cast_shadow = GeometryInstance3D.SHADOW_CASTING_SETTING_OFF
+	scan.visible = false
+	add_child(scan)
 
 
 func _build_confetti() -> void:

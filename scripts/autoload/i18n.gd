@@ -129,6 +129,8 @@ const S := {
 	"version": {"tr": "Sürüm {v}", "en": "Version {v}", "ru": "Версия {v}", "uz": "Versiya {v}", "zh": "版本 {v}", "ko": "버전 {v}"},
 	"stars_total": {"tr": "{v} yıldız", "en": "{v} stars", "ru": "{v} звёзд", "uz": "{v} yulduz", "zh": "{v} 颗星", "ko": "별 {v}개"},
 	"round": {"tr": "Penaltı {v}", "en": "Penalty {v}", "ru": "Пенальти {v}", "uz": "Penalti {v}", "zh": "第 {v} 轮", "ko": "페널티 {v}"},
+	"ai_guess": {"tr": "Yapay zekâ tahmini: %{p} {z}", "en": "AI prediction: {p}% {z}", "ru": "Прогноз ИИ: {p}% {z}", "uz": "SI taxmini: {p}% {z}", "zh": "AI 预测：{p}% {z}", "ko": "AI 예측: {p}% {z}"},
+	"ai_analyzing": {"tr": "Yapay zekâ veri topluyor… Seni analiz ediyor", "en": "AI is collecting data… analysing you", "ru": "ИИ собирает данные… анализирует тебя", "uz": "SI maʼlumot yigʻmoqda… sizni tahlil qilmoqda", "zh": "AI 正在收集数据……分析你", "ko": "AI가 데이터를 수집 중… 당신을 분석 중"},
 }
 
 func _ready() -> void:
