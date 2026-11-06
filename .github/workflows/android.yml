@@ -135,6 +135,8 @@ jobs:
           if [ -n "$B64" ] && [ -n "$PASS" ]; then
             echo "::add-mask::$PASS"
             printf '%s' "$B64" | base64 -d > "$KS" || { echo "::error::ANDROID_KEYSTORE_BASE64 çözülemedi (eksik/yanlış kopyalanmış olabilir)"; exit 1; }
+            echo "Teşhis: base64 uzunluğu=${#B64}, şifre uzunluğu=${#PASS}, alias uzunluğu=${#ALIAS}, alias='${ALIAS}', jks sha256=$(sha256sum "$KS" | cut -c1-16)"
+            if ! keytool -list -keystore "$KS" -storepass "$PASS" > /dev/null 2>&1; then echo "::error::Şifre dosyayı açmıyor (ANDROID_KEYSTORE_PASSWORD)"; fi
             if ! keytool -list -keystore "$KS" -storepass "$PASS" -alias "$ALIAS" > /dev/null 2>&1; then
               echo "::error::Anahtar açılamadı: ANDROID_KEYSTORE_PASSWORD veya ANDROID_KEY_ALIAS hatalı"; exit 1
             fi
