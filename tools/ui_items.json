@@ -1,0 +1,154 @@
+{
+ "coin": [
+  "ui",
+  128
+ ],
+ "gem": [
+  "ui",
+  128
+ ],
+ "heart": [
+  "ui",
+  128
+ ],
+ "gear": [
+  "ui",
+  128
+ ],
+ "trophy": [
+  "ui",
+  128
+ ],
+ "star": [
+  "ui",
+  128
+ ],
+ "shield_badge": [
+  "ui",
+  128
+ ],
+ "alert": [
+  "ui",
+  128
+ ],
+ "check": [
+  "ui",
+  128
+ ],
+ "pause": [
+  "ui",
+  128
+ ],
+ "play": [
+  "ui",
+  128
+ ],
+ "info": [
+  "ui",
+  128
+ ],
+ "fiber": [
+  "ui",
+  128
+ ],
+ "glucose": [
+  "ui",
+  128
+ ],
+ "prebiotic": [
+  "ui",
+  128
+ ],
+ "nutrient_drop": [
+  "ui",
+  128
+ ],
+ "growth_boost": [
+  "ui",
+  128
+ ],
+ "shield": [
+  "ui",
+  128
+ ],
+ "healing": [
+  "ui",
+  128
+ ],
+ "energy": [
+  "ui",
+  128
+ ],
+ "gift": [
+  "ui",
+  192
+ ],
+ "gut": [
+  "ui",
+  192
+ ],
+ "crown": [
+  "ui",
+  160
+ ],
+ "dna": [
+  "ui",
+  128
+ ],
+ "tile_pink": [
+  "environment",
+  160
+ ],
+ "tile_green": [
+  "environment",
+  160
+ ],
+ "tile_orange": [
+  "environment",
+  160
+ ],
+ "tile_purple": [
+  "environment",
+  160
+ ],
+ "tile_blue": [
+  "environment",
+  160
+ ],
+ "tile_block": [
+  "environment",
+  160
+ ],
+ "tile_boost": [
+  "environment",
+  160
+ ],
+ "tile_heal": [
+  "environment",
+  160
+ ],
+ "tile_danger": [
+  "environment",
+  160
+ ],
+ "coral_pink": [
+  "environment",
+  256
+ ],
+ "tubes_green": [
+  "environment",
+  256
+ ],
+ "coral_purple": [
+  "environment",
+  256
+ ],
+ "plants": [
+  "environment",
+  256
+ ],
+ "bubble": [
+  "vfx",
+  96
+ ]
+}

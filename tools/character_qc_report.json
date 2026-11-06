@@ -1,0 +1,758 @@
+{
+ "lactobacillus": {
+  "native_cutout_px": [
+   356,
+   484
+  ],
+  "upscale_1024": 1.78,
+  "base_512": {
+   "mode": "RGBA",
+   "size": [
+    512,
+    512
+   ],
+   "has_alpha": true,
+   "transparent_ratio": 0.694,
+   "touches_border": false,
+   "semi_transparent_px": 11040
+  },
+  "source_1024": {
+   "mode": "RGBA",
+   "size": [
+    1024,
+    1024
+   ],
+   "has_alpha": true,
+   "transparent_ratio": 0.694,
+   "touches_border": false,
+   "semi_transparent_px": 42908
+  },
+  "states": {
+   "idle_0": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.683,
+    "touches_border": false,
+    "semi_transparent_px": 3606
+   },
+   "idle_1": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.679,
+    "touches_border": false,
+    "semi_transparent_px": 3647
+   },
+   "idle_2": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.683,
+    "touches_border": false,
+    "semi_transparent_px": 3606
+   },
+   "idle_3": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.686,
+    "touches_border": false,
+    "semi_transparent_px": 3531
+   },
+   "happy": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.637,
+    "touches_border": false,
+    "semi_transparent_px": 6054
+   },
+   "eating": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.684,
+    "touches_border": false,
+    "semi_transparent_px": 3572
+   },
+   "damaged": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.669,
+    "touches_border": false,
+    "semi_transparent_px": 4817
+   }
+  }
+ },
+ "bifidobacterium": {
+  "native_cutout_px": [
+   392,
+   509
+  ],
+  "upscale_1024": 1.69,
+  "base_512": {
+   "mode": "RGBA",
+   "size": [
+    512,
+    512
+   ],
+   "has_alpha": true,
+   "transparent_ratio": 0.703,
+   "touches_border": false,
+   "semi_transparent_px": 9386
+  },
+  "source_1024": {
+   "mode": "RGBA",
+   "size": [
+    1024,
+    1024
+   ],
+   "has_alpha": true,
+   "transparent_ratio": 0.703,
+   "touches_border": false,
+   "semi_transparent_px": 36424
+  },
+  "states": {
+   "idle_0": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.692,
+    "touches_border": false,
+    "semi_transparent_px": 3167
+   },
+   "idle_1": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.688,
+    "touches_border": false,
+    "semi_transparent_px": 3240
+   },
+   "idle_2": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.692,
+    "touches_border": false,
+    "semi_transparent_px": 3167
+   },
+   "idle_3": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.695,
+    "touches_border": false,
+    "semi_transparent_px": 3156
+   },
+   "happy": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.656,
+    "touches_border": false,
+    "semi_transparent_px": 4995
+   },
+   "eating": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.693,
+    "touches_border": false,
+    "semi_transparent_px": 3169
+   },
+   "damaged": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.682,
+    "touches_border": false,
+    "semi_transparent_px": 4253
+   }
+  }
+ },
+ "streptococcus": {
+  "native_cutout_px": [
+   355,
+   467
+  ],
+  "upscale_1024": 1.84,
+  "base_512": {
+   "mode": "RGBA",
+   "size": [
+    512,
+    512
+   ],
+   "has_alpha": true,
+   "transparent_ratio": 0.703,
+   "touches_border": false,
+   "semi_transparent_px": 10651
+  },
+  "source_1024": {
+   "mode": "RGBA",
+   "size": [
+    1024,
+    1024
+   ],
+   "has_alpha": true,
+   "transparent_ratio": 0.704,
+   "touches_border": false,
+   "semi_transparent_px": 41438
+  },
+  "states": {
+   "idle_0": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.694,
+    "touches_border": false,
+    "semi_transparent_px": 3398
+   },
+   "idle_1": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.689,
+    "touches_border": false,
+    "semi_transparent_px": 3495
+   },
+   "idle_2": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.694,
+    "touches_border": false,
+    "semi_transparent_px": 3398
+   },
+   "idle_3": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.698,
+    "touches_border": false,
+    "semi_transparent_px": 3373
+   },
+   "happy": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.65,
+    "touches_border": false,
+    "semi_transparent_px": 5690
+   },
+   "eating": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.693,
+    "touches_border": false,
+    "semi_transparent_px": 3490
+   },
+   "damaged": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.675,
+    "touches_border": false,
+    "semi_transparent_px": 4940
+   }
+  }
+ },
+ "e_faecalis": {
+  "native_cutout_px": [
+   344,
+   451
+  ],
+  "upscale_1024": 1.91,
+  "base_512": {
+   "mode": "RGBA",
+   "size": [
+    512,
+    512
+   ],
+   "has_alpha": true,
+   "transparent_ratio": 0.651,
+   "touches_border": false,
+   "semi_transparent_px": 9200
+  },
+  "source_1024": {
+   "mode": "RGBA",
+   "size": [
+    1024,
+    1024
+   ],
+   "has_alpha": true,
+   "transparent_ratio": 0.651,
+   "touches_border": false,
+   "semi_transparent_px": 36612
+  },
+  "states": {
+   "idle_0": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.642,
+    "touches_border": false,
+    "semi_transparent_px": 2895
+   },
+   "idle_1": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.639,
+    "touches_border": false,
+    "semi_transparent_px": 2916
+   },
+   "idle_2": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.642,
+    "touches_border": false,
+    "semi_transparent_px": 2895
+   },
+   "idle_3": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.646,
+    "touches_border": false,
+    "semi_transparent_px": 2859
+   },
+   "happy": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.598,
+    "touches_border": false,
+    "semi_transparent_px": 5244
+   },
+   "eating": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.644,
+    "touches_border": false,
+    "semi_transparent_px": 2884
+   },
+   "damaged": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.63,
+    "touches_border": false,
+    "semi_transparent_px": 3965
+   }
+  }
+ },
+ "pathogen": {
+  "native_cutout_px": [
+   502,
+   499
+  ],
+  "upscale_1024": 1.71,
+  "base_512": {
+   "mode": "RGBA",
+   "size": [
+    512,
+    512
+   ],
+   "has_alpha": true,
+   "transparent_ratio": 0.54,
+   "touches_border": false,
+   "semi_transparent_px": 15110
+  },
+  "source_1024": {
+   "mode": "RGBA",
+   "size": [
+    1024,
+    1024
+   ],
+   "has_alpha": true,
+   "transparent_ratio": 0.541,
+   "touches_border": false,
+   "semi_transparent_px": 58463
+  },
+  "states": {
+   "idle_0": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.524,
+    "touches_border": false,
+    "semi_transparent_px": 5082
+   },
+   "idle_1": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.52,
+    "touches_border": false,
+    "semi_transparent_px": 5093
+   },
+   "idle_2": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.524,
+    "touches_border": false,
+    "semi_transparent_px": 5082
+   },
+   "idle_3": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.529,
+    "touches_border": false,
+    "semi_transparent_px": 5000
+   },
+   "happy": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.491,
+    "touches_border": false,
+    "semi_transparent_px": 6835
+   },
+   "eating": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.526,
+    "touches_border": false,
+    "semi_transparent_px": 5029
+   },
+   "damaged": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.51,
+    "touches_border": false,
+    "semi_transparent_px": 6643
+   }
+  }
+ },
+ "inflammatory": {
+  "native_cutout_px": [
+   464,
+   459
+  ],
+  "upscale_1024": 1.85,
+  "base_512": {
+   "mode": "RGBA",
+   "size": [
+    512,
+    512
+   ],
+   "has_alpha": true,
+   "transparent_ratio": 0.548,
+   "touches_border": false,
+   "semi_transparent_px": 12074
+  },
+  "source_1024": {
+   "mode": "RGBA",
+   "size": [
+    1024,
+    1024
+   ],
+   "has_alpha": true,
+   "transparent_ratio": 0.547,
+   "touches_border": false,
+   "semi_transparent_px": 47370
+  },
+  "states": {
+   "idle_0": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.535,
+    "touches_border": false,
+    "semi_transparent_px": 3814
+   },
+   "idle_1": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.531,
+    "touches_border": false,
+    "semi_transparent_px": 3891
+   },
+   "idle_2": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.535,
+    "touches_border": false,
+    "semi_transparent_px": 3814
+   },
+   "idle_3": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.54,
+    "touches_border": false,
+    "semi_transparent_px": 3814
+   },
+   "happy": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.502,
+    "touches_border": false,
+    "semi_transparent_px": 5605
+   },
+   "eating": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.537,
+    "touches_border": false,
+    "semi_transparent_px": 3841
+   },
+   "damaged": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.515,
+    "touches_border": false,
+    "semi_transparent_px": 5503
+   }
+  }
+ },
+ "c_difficile": {
+  "native_cutout_px": [
+   432,
+   493
+  ],
+  "upscale_1024": 1.74,
+  "base_512": {
+   "mode": "RGBA",
+   "size": [
+    512,
+    512
+   ],
+   "has_alpha": true,
+   "transparent_ratio": 0.629,
+   "touches_border": false,
+   "semi_transparent_px": 12736
+  },
+  "source_1024": {
+   "mode": "RGBA",
+   "size": [
+    1024,
+    1024
+   ],
+   "has_alpha": true,
+   "transparent_ratio": 0.629,
+   "touches_border": false,
+   "semi_transparent_px": 49104
+  },
+  "states": {
+   "idle_0": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.617,
+    "touches_border": false,
+    "semi_transparent_px": 4162
+   },
+   "idle_1": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.612,
+    "touches_border": false,
+    "semi_transparent_px": 4220
+   },
+   "idle_2": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.617,
+    "touches_border": false,
+    "semi_transparent_px": 4162
+   },
+   "idle_3": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.619,
+    "touches_border": false,
+    "semi_transparent_px": 4160
+   },
+   "happy": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.582,
+    "touches_border": false,
+    "semi_transparent_px": 5996
+   },
+   "eating": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.617,
+    "touches_border": false,
+    "semi_transparent_px": 4130
+   },
+   "damaged": {
+    "mode": "RGBA",
+    "size": [
+     256,
+     256
+    ],
+    "has_alpha": true,
+    "transparent_ratio": 0.596,
+    "touches_border": false,
+    "semi_transparent_px": 5980
+   }
+  }
+ }
+}

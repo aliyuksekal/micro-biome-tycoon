@@ -1,0 +1,64 @@
+; Engine configuration file.
+; Godot 4.7 — Micro-Biome Tycoon
+
+config_version=5
+
+[application]
+
+config/name="Micro-Biome Tycoon"
+config/description="Build, balance and thrive: a cute gut-microbiome idle tycoon."
+config/version="1.0.0"
+run/main_scene="res://scenes/main.tscn"
+config/quit_on_go_back=false
+config/features=PackedStringArray("4.7", "GL Compatibility")
+config/icon="res://assets/icons/icon_192.png"
+boot_splash/bg_color=Color(1, 0.86, 0.89, 1)
+boot_splash/show_image=true
+boot_splash/image="res://assets/icons/splash_icon.png"
+boot_splash/fullsize=false
+boot_splash/use_filter=true
+
+[autoload]
+
+I18n="*res://scripts/autoload/i18n.gd"
+Settings="*res://scripts/autoload/settings.gd"
+Assets="*res://scripts/autoload/assets.gd"
+Sfx="*res://scripts/autoload/sfx.gd"
+UiTheme="*res://scripts/autoload/ui_theme.gd"
+Game="*res://scripts/autoload/game.gd"
+
+[display]
+
+window/size/viewport_width=720
+window/size/viewport_height=1280
+window/size/resizable=true
+window/stretch/mode="canvas_items"
+window/stretch/aspect="expand"
+window/handheld/orientation=6
+
+[gui]
+
+common/drop_mouse_on_gui_input_disabled=true
+timers/tooltip_delay_sec=0.0
+
+[importer_defaults]
+
+texture={
+"mipmaps/generate": true
+}
+
+[input_devices]
+
+pointing/emulate_touch_from_mouse=true
+
+[physics]
+
+common/physics_ticks_per_second=30
+
+[rendering]
+
+renderer/rendering_method="gl_compatibility"
+renderer/rendering_method.mobile="gl_compatibility"
+textures/canvas_textures/default_texture_filter=3
+textures/vram_compression/import_etc2_astc=true
+environment/defaults/default_clear_color=Color(1, 0.945, 0.953, 1)
