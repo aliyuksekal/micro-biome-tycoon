@@ -127,10 +127,18 @@ jobs:
           KS_ALIAS: ${{ secrets.ANDROID_KEY_ALIAS }}
         run: |
           KS="$RUNNER_TEMP/upload.jks"
-          if [ -n "$KS_B64" ] && [ -n "$KS_PASS" ]; then
-            echo "$KS_B64" | base64 -d > "$KS"
-            ALIAS="${KS_ALIAS:-upload}"
-            PASS="$KS_PASS"
+          # telefondan yapıştırırken eklenen boşluk / satır sonlarını temizle
+          B64=$(printf '%s' "$KS_B64" | tr -d ' \r\n\t')
+          PASS=$(printf '%s' "$KS_PASS" | tr -d '\r\n')
+          ALIAS=$(printf '%s' "$KS_ALIAS" | tr -d ' \r\n\t')
+          [ -n "$ALIAS" ] || ALIAS=upload
+          if [ -n "$B64" ] && [ -n "$PASS" ]; then
+            echo "::add-mask::$PASS"
+            printf '%s' "$B64" | base64 -d > "$KS" || { echo "::error::ANDROID_KEYSTORE_BASE64 çözülemedi (eksik/yanlış kopyalanmış olabilir)"; exit 1; }
+            if ! keytool -list -keystore "$KS" -storepass "$PASS" -alias "$ALIAS" > /dev/null 2>&1; then
+              echo "::error::Anahtar açılamadı: ANDROID_KEYSTORE_PASSWORD veya ANDROID_KEY_ALIAS hatalı"; exit 1
+            fi
+            keytool -list -v -keystore "$KS" -storepass "$PASS" -alias "$ALIAS" 2>/dev/null | grep -E "Owner|SHA256" | head -2
             echo "SIGNING=permanent" >> $GITHUB_ENV
           else
             echo "::warning::İmza gizli anahtarları yok - GEÇİCİ anahtarla imzalanıyor. Bu AAB Play Console'a yüklenmemeli."
